@@ -1,0 +1,6924 @@
+1) statelessWidget
+
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(
+    MaterialApp(
+      home: MyApp(),
+    ),
+  );
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({Key key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Center(child: Text('hi')),
+    );
+  }
+}
+
+
+
+2) statefulWidget
+
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(
+    MaterialApp(
+      home: MyApp(),
+    ),
+  );
+}
+
+class MyApp extends StatefulWidget {
+  const MyApp({Key key}) : super(key: key);
+
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  String value = 'Test';
+
+  void clickMe() {
+    setState(() {
+      value = 'shaam';
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Center(
+        child: Text(value),
+      ),
+      floatingActionButton: FloatingActionButton(
+        child: Icon(Icons.add),
+        onPressed: () {
+          clickMe();
+        },
+      ),
+    );
+  }
+}
+
+
+3) safeArea
+
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(
+    MaterialApp(
+      home: MyApp(),
+    ),
+  );
+}
+
+class MyApp extends StatefulWidget {
+  const MyApp({Key key}) : super(key: key);
+
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  String value = 'Test';
+
+  void clickMe() {
+    setState(() {
+      value = 'shaam';
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: SafeArea(
+        child: Text('Shaam'),
+      ),
+    );
+  }
+}
+
+
+
+4) appBar
+
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(
+    MaterialApp(
+      home: MyApp(),
+    ),
+  );
+}
+
+class MyApp extends StatefulWidget {
+  const MyApp({Key key}) : super(key: key);
+
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  String value = 'Test';
+
+  void clickMe() {
+    setState(() {
+      value = 'shaam';
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('AppBar'),
+        leading: IconButton(
+          icon: Icon(Icons.menu),
+          onPressed: () {
+            print('Hi');
+          },
+        ),
+        actions: [
+          IconButton(
+            onPressed: () {
+              print('Hi');
+            },
+            icon: Icon(Icons.abc),
+          ),
+          IconButton(
+            onPressed: () {
+              print('bye');
+            },
+            icon: Icon(Icons.zoom_out_sharp),
+          ),
+        ],
+      ),
+      body: SafeArea(
+        child: Text('Shaam'),
+      ),
+    );
+  }
+}
+
+
+
+5) use prefferedSize and flexibleSpace in appBar
+
+
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(
+    MaterialApp(
+      home: MyApp(),
+    ),
+  );
+}
+
+class MyApp extends StatefulWidget {
+  const MyApp({Key key}) : super(key: key);
+
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  String value = 'Test';
+
+  void clickMe() {
+    setState(() {
+      value = 'shaam';
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('AppBar'),
+        leading: IconButton(
+          icon: Icon(Icons.menu),
+          onPressed: () {
+            print('Hi');
+          },
+        ),
+        actions: [
+          IconButton(
+            onPressed: () {
+              print('Hi');
+            },
+            icon: Icon(Icons.abc),
+          ),
+          IconButton(
+            onPressed: () {
+              print('bye');
+            },
+            icon: Icon(Icons.zoom_out_sharp),
+          ),
+        ],
+        flexibleSpace: SafeArea(
+          child: Icon(
+            Icons.camera,
+            color: Colors.white,
+            size: 55,
+          ),
+        ),
+        bottom: PreferredSize(
+          child: Container(
+            color: Colors.grey,
+            height: 75,
+            width: double.infinity,
+            child: Text('Tutor joes',
+                style: TextStyle(color: Colors.white, fontSize: 25)),
+          ),
+          preferredSize: Size.fromHeight(75),
+        ),
+      ),
+      body: SafeArea(
+        child: Text('Shaam'),
+      ),
+    );
+  }
+}
+
+
+5) FloatingActionButton
+
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(
+    MaterialApp(
+      home: MyApp(),
+    ),
+  );
+}
+
+class MyApp extends StatefulWidget {
+  const MyApp({Key key}) : super(key: key);
+
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  String value = 'Test';
+
+  void clickMe() {
+    setState(() {
+      value = 'shaam';
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('AppBar'),
+        leading: IconButton(
+          icon: Icon(Icons.menu),
+          onPressed: () {
+            print('Hi');
+          },
+        ),
+        actions: [
+          IconButton(
+            onPressed: () {
+              print('Hi');
+            },
+            icon: Icon(Icons.abc),
+          ),
+          IconButton(
+            onPressed: () {
+              print('bye');
+            },
+            icon: Icon(Icons.zoom_out_sharp),
+          ),
+        ],
+        flexibleSpace: SafeArea(
+          child: Icon(
+            Icons.camera,
+            color: Colors.white,
+            size: 55,
+          ),
+        ),
+        bottom: PreferredSize(
+          child: Container(
+            color: Colors.grey,
+            height: 75,
+            width: double.infinity,
+            child: Text('Tutor joes',
+                style: TextStyle(color: Colors.white, fontSize: 25)),
+          ),
+          preferredSize: Size.fromHeight(75),
+        ),
+      ),
+      body: Center(
+        child: Text('Hi'),
+      ),
+      floatingActionButton: FloatingActionButton(
+        elevation: 10,
+        child: Icon(Icons.add),
+        onPressed: () {
+          print('shaam');
+        },
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
+    );
+  }
+}
+
+
+6) Drawer top one
+
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(
+    MaterialApp(
+      home: MyApp(),
+    ),
+  );
+}
+
+class MyApp extends StatefulWidget {
+  const MyApp({Key key}) : super(key: key);
+
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  String value = 'Test';
+
+  void clickMe() {
+    setState(() {
+      value = 'shaam';
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('AppBar'),
+        actions: [
+          IconButton(
+            onPressed: () {
+              print('Hi');
+            },
+            icon: Icon(Icons.abc),
+          ),
+          IconButton(
+            onPressed: () {
+              print('bye');
+            },
+            icon: Icon(Icons.zoom_out_sharp),
+          ),
+        ],
+        flexibleSpace: SafeArea(
+          child: Icon(
+            Icons.camera,
+            color: Colors.white,
+            size: 55,
+          ),
+        ),
+        bottom: PreferredSize(
+          child: Container(
+            color: Colors.grey,
+            height: 75,
+            width: double.infinity,
+            child: Text('Tutor joes',
+                style: TextStyle(color: Colors.white, fontSize: 25)),
+          ),
+          preferredSize: Size.fromHeight(75),
+        ),
+      ),
+      body: Center(
+        child: Text('Hi'),
+      ),
+      floatingActionButton: FloatingActionButton(
+        elevation: 10,
+        child: Icon(Icons.add),
+        onPressed: () {
+          print('shaam');
+        },
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
+      drawer: Drawer(
+        elevation: 16,
+        child: Column(
+          children: [
+            UserAccountsDrawerHeader(
+              accountName: Text('shaam'),
+              accountEmail: Text('shaam@gmail.com'),
+              currentAccountPicture: CircleAvatar(
+                backgroundColor: Colors.white,
+                child: Text('Xyz'),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+7)drawer body
+
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(
+    MaterialApp(
+      home: MyApp(),
+    ),
+  );
+}
+
+class MyApp extends StatefulWidget {
+  const MyApp({Key key}) : super(key: key);
+
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  String value = 'Test';
+
+  void clickMe() {
+    setState(() {
+      value = 'shaam';
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('AppBar'),
+        actions: [
+          IconButton(
+            onPressed: () {
+              print('Hi');
+            },
+            icon: Icon(Icons.abc),
+          ),
+          IconButton(
+            onPressed: () {
+              print('bye');
+            },
+            icon: Icon(Icons.zoom_out_sharp),
+          ),
+        ],
+        flexibleSpace: SafeArea(
+          child: Icon(
+            Icons.camera,
+            color: Colors.white,
+            size: 55,
+          ),
+        ),
+        bottom: PreferredSize(
+          child: Container(
+            color: Colors.grey,
+            height: 75,
+            width: double.infinity,
+            child: Text('Tutor joes',
+                style: TextStyle(color: Colors.white, fontSize: 25)),
+          ),
+          preferredSize: Size.fromHeight(75),
+        ),
+      ),
+      body: Center(
+        child: Text('Hi'),
+      ),
+      floatingActionButton: FloatingActionButton(
+        elevation: 10,
+        child: Icon(Icons.add),
+        onPressed: () {
+          print('shaam');
+        },
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
+      drawer: Drawer(
+        elevation: 16,
+        child: Column(
+          children: [
+            UserAccountsDrawerHeader(
+                accountName: Text('shaam'),
+                accountEmail: Text('shaam@gmail.com'),
+                currentAccountPicture: CircleAvatar(
+                  backgroundColor: Colors.white,
+                  child: Text('Xyz'),
+                ),
+                otherAccountsPictures: [
+                  CircleAvatar(
+                    backgroundColor: Colors.white,
+                    child: Text('Xyz'),
+                  ),
+                ]),
+            ListTile(
+              title: Text('All inbox'),
+              leading: Icon(Icons.mail),
+            ),
+            Divider(
+              height: 0.1,
+            ),
+            ListTile(
+              title: Text('spams'),
+              leading: Icon(Icons.delete),
+            ),
+            Divider(
+              height: 0.1,
+            ),
+            ListTile(title: Text('Tools'), leading: Icon(Icons.lock_clock)),
+            Divider(
+              height: 0.1,
+            ),
+            ListTile(
+              title: Text(''),
+              leading: Icon(Icons.mail),
+            ),
+            Divider(
+              height: 0.1,
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+8) persistant footer button
+
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(
+    MaterialApp(
+      home: MyApp(),
+    ),
+  );
+}
+
+class MyApp extends StatefulWidget {
+  const MyApp({Key key}) : super(key: key);
+
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  String value = 'Test';
+
+  void clickMe() {
+    setState(() {
+      value = 'shaam';
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        appBar: AppBar(
+          title: Text('AppBar'),
+          actions: [
+            IconButton(
+              onPressed: () {
+                print('Hi');
+              },
+              icon: Icon(Icons.abc),
+            ),
+            IconButton(
+              onPressed: () {
+                print('bye');
+              },
+              icon: Icon(Icons.zoom_out_sharp),
+            ),
+          ],
+          flexibleSpace: SafeArea(
+            child: Icon(
+              Icons.camera,
+              color: Colors.white,
+              size: 55,
+            ),
+          ),
+          bottom: PreferredSize(
+            child: Container(
+              color: Colors.grey,
+              height: 75,
+              width: double.infinity,
+              child: Text('Tutor joes',
+                  style: TextStyle(color: Colors.white, fontSize: 25)),
+            ),
+            preferredSize: Size.fromHeight(75),
+          ),
+        ),
+        body: Center(
+          child: Text('Hi'),
+        ),
+        floatingActionButton: FloatingActionButton(
+          elevation: 10,
+          child: Icon(Icons.add),
+          onPressed: () {
+            print('shaam');
+          },
+        ),
+        floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
+        drawer: Drawer(
+          elevation: 16,
+          child: Column(
+            children: [
+              UserAccountsDrawerHeader(
+                  accountName: Text('shaam'),
+                  accountEmail: Text('shaam@gmail.com'),
+                  currentAccountPicture: CircleAvatar(
+                    backgroundColor: Colors.white,
+                    child: Text('Xyz'),
+                  ),
+                  otherAccountsPictures: [
+                    CircleAvatar(
+                      backgroundColor: Colors.white,
+                      child: Text('Xyz'),
+                    ),
+                  ]),
+              ListTile(
+                title: Text('All inbox'),
+                leading: Icon(Icons.mail),
+              ),
+              Divider(
+                height: 0.1,
+              ),
+              ListTile(
+                title: Text('spams'),
+                leading: Icon(Icons.delete),
+              ),
+              Divider(
+                height: 0.1,
+              ),
+              ListTile(title: Text('Tools'), leading: Icon(Icons.lock_clock)),
+              Divider(
+                height: 0.1,
+              ),
+              ListTile(
+                title: Text(''),
+                leading: Icon(Icons.mail),
+              ),
+              Divider(
+                height: 0.1,
+              ),
+            ],
+          ),
+        ),
+        persistentFooterButtons: [
+          RaisedButton(
+            elevation: 10,
+            color: Colors.red,
+            child: Icon(Icons.add),
+            onPressed: () {
+              print('hi');
+            },
+          ),
+          RaisedButton(
+            elevation: 10,
+            color: Colors.red,
+            child: Icon(Icons.crop_sharp),
+            onPressed: () {
+              print('hi');
+            },
+          ),
+        ]);
+  }
+}
+
+
+9)bottom navigation bar
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(
+    MaterialApp(
+      home: MyApp(),
+    ),
+  );
+}
+
+class MyApp extends StatefulWidget {
+  const MyApp({Key key}) : super(key: key);
+
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  String value = 'Test';
+
+  void clickMe() {
+    setState(() {
+      value = 'shaam';
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('AppBar'),
+        actions: [
+          IconButton(
+            onPressed: () {
+              print('Hi');
+            },
+            icon: Icon(Icons.abc),
+          ),
+          IconButton(
+            onPressed: () {
+              print('bye');
+            },
+            icon: Icon(Icons.zoom_out_sharp),
+          ),
+        ],
+        flexibleSpace: SafeArea(
+          child: Icon(
+            Icons.camera,
+            color: Colors.white,
+            size: 55,
+          ),
+        ),
+        bottom: PreferredSize(
+          child: Container(
+            color: Colors.grey,
+            height: 75,
+            width: double.infinity,
+            child: Text('Tutor joes',
+                style: TextStyle(color: Colors.white, fontSize: 25)),
+          ),
+          preferredSize: Size.fromHeight(75),
+        ),
+      ),
+      body: Center(
+        child: Text('Hi'),
+      ),
+      floatingActionButton: FloatingActionButton(
+        elevation: 10,
+        child: Icon(Icons.add),
+        onPressed: () {
+          print('shaam');
+        },
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
+      drawer: Drawer(
+        elevation: 16,
+        child: Column(
+          children: [
+            UserAccountsDrawerHeader(
+                accountName: Text('shaam'),
+                accountEmail: Text('shaam@gmail.com'),
+                currentAccountPicture: CircleAvatar(
+                  backgroundColor: Colors.white,
+                  child: Text('Xyz'),
+                ),
+                otherAccountsPictures: [
+                  CircleAvatar(
+                    backgroundColor: Colors.white,
+                    child: Text('Xyz'),
+                  ),
+                ]),
+            ListTile(
+              title: Text('All inbox'),
+              leading: Icon(Icons.mail),
+            ),
+            Divider(
+              height: 0.1,
+            ),
+            ListTile(
+              title: Text('spams'),
+              leading: Icon(Icons.delete),
+            ),
+            Divider(
+              height: 0.1,
+            ),
+            ListTile(title: Text('Tools'), leading: Icon(Icons.lock_clock)),
+            Divider(
+              height: 0.1,
+            ),
+            ListTile(
+              title: Text(''),
+              leading: Icon(Icons.mail),
+            ),
+            Divider(
+              height: 0.1,
+            ),
+          ],
+        ),
+      ),
+      persistentFooterButtons: [
+        RaisedButton(
+          elevation: 10,
+          color: Colors.red,
+          child: Icon(Icons.add),
+          onPressed: () {
+            print('hi');
+          },
+        ),
+        RaisedButton(
+          elevation: 10,
+          color: Colors.red,
+          child: Icon(Icons.crop_sharp),
+          onPressed: () {
+            print('hi');
+          },
+        ),
+      ],
+      bottomNavigationBar: BottomNavigationBar(
+        fixedColor: Colors.red,
+        currentIndex: 1,
+        items: [
+          BottomNavigationBarItem(icon: Icon(Icons.home), label: 'shaam'),
+          BottomNavigationBarItem(icon: Icon(Icons.golf_course), label: 'golf')
+        ],
+        onTap: (int index) {
+          print(
+            index.toString(),
+          );
+        },
+      ),
+    );
+  }
+}
+
+
+10) endDrawer
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(
+    MaterialApp(
+      home: MyApp(),
+    ),
+  );
+}
+
+class MyApp extends StatefulWidget {
+  const MyApp({Key key}) : super(key: key);
+
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  String value = 'Test';
+
+  void clickMe() {
+    setState(() {
+      value = 'shaam';
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('AppBar'),
+        flexibleSpace: SafeArea(
+          child: Icon(
+            Icons.camera,
+            color: Colors.white,
+            size: 55,
+          ),
+        ),
+        bottom: PreferredSize(
+          child: Container(
+            color: Colors.grey,
+            height: 75,
+            width: double.infinity,
+            child: Text('Tutor joes',
+                style: TextStyle(color: Colors.white, fontSize: 25)),
+          ),
+          preferredSize: Size.fromHeight(75),
+        ),
+      ),
+      body: Center(
+        child: Text('Hi'),
+      ),
+      floatingActionButton: FloatingActionButton(
+        elevation: 10,
+        child: Icon(Icons.add),
+        onPressed: () {
+          print('shaam');
+        },
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
+      drawer: Drawer(
+        elevation: 16,
+        child: Column(
+          children: [
+            UserAccountsDrawerHeader(
+                accountName: Text('shaam'),
+                accountEmail: Text('shaam@gmail.com'),
+                currentAccountPicture: CircleAvatar(
+                  backgroundColor: Colors.white,
+                  child: Text('Xyz'),
+                ),
+                otherAccountsPictures: [
+                  CircleAvatar(
+                    backgroundColor: Colors.white,
+                    child: Text('Xyz'),
+                  ),
+                ]),
+            ListTile(
+              title: Text('All inbox'),
+              leading: Icon(Icons.mail),
+            ),
+            Divider(
+              height: 0.1,
+            ),
+            ListTile(
+              title: Text('spams'),
+              leading: Icon(Icons.delete),
+            ),
+            Divider(
+              height: 0.1,
+            ),
+            ListTile(title: Text('Tools'), leading: Icon(Icons.lock_clock)),
+            Divider(
+              height: 0.1,
+            ),
+            ListTile(
+              title: Text(''),
+              leading: Icon(Icons.mail),
+            ),
+            Divider(
+              height: 0.1,
+            ),
+          ],
+        ),
+      ),
+      persistentFooterButtons: [
+        RaisedButton(
+          elevation: 10,
+          color: Colors.red,
+          child: Icon(Icons.add),
+          onPressed: () {
+            print('hi');
+          },
+        ),
+        RaisedButton(
+          elevation: 10,
+          color: Colors.red,
+          child: Icon(Icons.crop_sharp),
+          onPressed: () {
+            print('hi');
+          },
+        ),
+      ],
+      bottomNavigationBar: BottomNavigationBar(
+        fixedColor: Colors.red,
+        currentIndex: 1,
+        items: [
+          BottomNavigationBarItem(icon: Icon(Icons.home), label: 'shaam'),
+          BottomNavigationBarItem(icon: Icon(Icons.golf_course), label: 'golf')
+        ],
+        onTap: (int index) {
+          print(
+            index.toString(),
+          );
+        },
+      ),
+      endDrawer: Drawer(
+        elevation: 16,
+        child: Column(
+          children: [
+            UserAccountsDrawerHeader(
+                accountName: Text('shaam'),
+                accountEmail: Text('shaam@gmail.com'),
+                currentAccountPicture: CircleAvatar(
+                  backgroundColor: Colors.white,
+                  child: Text('Xyz'),
+                ),
+                otherAccountsPictures: [
+                  CircleAvatar(
+                    backgroundColor: Colors.white,
+                    child: Text('Xyz'),
+                  ),
+                ]),
+            ListTile(
+              title: Text('All inbox'),
+              leading: Icon(Icons.mail),
+            ),
+            Divider(
+              height: 0.1,
+            ),
+            ListTile(
+              title: Text('spams'),
+              leading: Icon(Icons.delete),
+            ),
+            Divider(
+              height: 0.1,
+            ),
+            ListTile(title: Text('Tools'), leading: Icon(Icons.lock_clock)),
+            Divider(
+              height: 0.1,
+            ),
+            ListTile(
+              title: Text(''),
+              leading: Icon(Icons.mail),
+            ),
+            Divider(
+              height: 0.1,
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+
+11) textWidget
+
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(
+    MaterialApp(
+      home: MyApp(),
+    ),
+  );
+}
+
+class MyApp extends StatefulWidget {
+  const MyApp({Key key}) : super(key: key);
+
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  String value = 'Test';
+
+  void clickMe() {
+    setState(() {
+      value = 'shaam';
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('AppBar'),
+        flexibleSpace: SafeArea(
+          child: Icon(
+            Icons.camera,
+            color: Colors.white,
+            size: 55,
+          ),
+        ),
+      ),
+      body: Center(
+        child: Text('Shaam Natheshwar', style: TextStyle(
+          fontSize: 25,
+          color: Colors.blue,
+          fontWeight: FontWeight.bold,
+          fontStyle: FontStyle.italic,
+          letterSpacing: 1.0,
+          wordSpacing: 5.0,
+          backgroundColor: Colors.teal,
+          shadows:[
+            Shadow(
+              color: Colors.black,
+              offset: Offset(1,4),
+              blurRadius: 2,
+            )
+          ],
+          decoration: TextDecoration.underline,
+          decorationColor: Colors.red,
+          decorationStyle: TextDecorationStyle.double,
+        ),)
+      ),
+    );
+
+  }
+}
+
+
+12) Row
+
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(
+    MaterialApp(
+      home: MyApp(),
+    ),
+  );
+}
+
+class MyApp extends StatefulWidget {
+  const MyApp({Key key}) : super(key: key);
+
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  String value = 'Test';
+
+  void clickMe() {
+    setState(() {
+      value = 'shaam';
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        appBar: AppBar(
+          title: Text('AppBar'),
+          flexibleSpace: SafeArea(
+            child: Icon(
+              Icons.camera,
+              color: Colors.white,
+              size: 55,
+            ),
+          ),
+        ),
+        body: Container(
+          height: 1000,
+          child: Row(
+            // mainAxisAlignment: MainAxisAlignment.start,
+            // mainAxisAlignment: MainAxisAlignment.spaceAround,
+            // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            // mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            mainAxisAlignment: MainAxisAlignment.end,
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              Container(
+                color: Colors.red,
+                height: 100,
+                width: 100,
+              ),
+              Container(
+                color: Colors.green,
+                height: 100,
+                width: 100,
+              ),
+              Container(
+                color: Colors.blue,
+                height: 100,
+                width: 100,
+              ),
+            ],
+          ),
+        ));
+  }
+}
+
+
+12 B) Having row 
+
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(
+    MaterialApp(
+      home: MyApp(),
+    ),
+  );
+}
+
+class MyApp extends StatefulWidget {
+  const MyApp({Key key}) : super(key: key);
+
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  String value = 'Test';
+
+  void clickMe() {
+    setState(() {
+      value = 'shaam';
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        appBar: AppBar(
+          title: Text('AppBar'),
+          flexibleSpace: SafeArea(
+            child: Icon(
+              Icons.camera,
+              color: Colors.white,
+              size: 55,
+            ),
+          ),
+        ),
+        body: Container(
+          height: 1000,
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.baseline,
+            textBaseline: TextBaseline.alphabetic,
+            children: [
+              Text(
+                'Shaam',
+                style: TextStyle(
+                  fontSize: 30,
+                ),
+              ),
+              Text(
+                'nath',
+                style: TextStyle(
+                  fontSize: 10,
+                ),
+              ),
+            ],
+          ),
+        ));
+  }
+}
+
+
+13) Column
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(
+    MaterialApp(
+      home: MyApp(),
+    ),
+  );
+}
+
+class MyApp extends StatefulWidget {
+  const MyApp({Key key}) : super(key: key);
+
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  String value = 'Test';
+
+  void clickMe() {
+    setState(() {
+      value = 'shaam';
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        appBar: AppBar(
+          title: Text('AppBar'),
+          flexibleSpace: SafeArea(
+            child: Icon(
+              Icons.camera,
+              color: Colors.white,
+              size: 55,
+            ),
+          ),
+        ),
+        body: Container(
+            height: 1000,
+            width: double.infinity,
+            child: Column(
+                // mainAxisAlignment: MainAxisAlignment.spaceAround,
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                // mainAxisAlignment: MainAxisAlignment.end,
+                // mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Container(
+                    color: Colors.red,
+                    height: 75,
+                    width: 75,
+                  ),
+                  Container(
+                    color: Colors.green,
+                    height: 75,
+                    width: 75,
+                  ),
+                  Container(
+                    color: Colors.blue,
+                    height: 75,
+                    width: 75,
+                  ),
+                ])));
+  }
+}
+
+14) FlatButton
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(
+    MaterialApp(
+      home: MyApp(),
+    ),
+  );
+}
+
+class MyApp extends StatefulWidget {
+  const MyApp({Key key}) : super(key: key);
+
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  String value = 'Test';
+
+  void clickMe() {
+    setState(() {
+      value = 'shaam';
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('AppBar'),
+        flexibleSpace: SafeArea(
+          child: Icon(
+            Icons.camera,
+            color: Colors.white,
+            size: 55,
+          ),
+        ),
+      ),
+      body: Center(
+        child: FlatButton(
+          color: Colors.teal,
+          textColor: Colors.white,
+          padding: EdgeInsets.all(15),
+          splashColor: Colors.blue,
+          child: Text('Click Me'),
+          onPressed: () {
+            print('hi');
+          },
+          disabledColor: Colors.grey,
+          disabledTextColor: Colors.deepOrange,
+        ),
+      ),
+    );
+  }
+}
+
+
+15) Raised buttonWidget 
+
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(
+    MaterialApp(
+      home: MyApp(),
+    ),
+  );
+}
+
+class MyApp extends StatefulWidget {
+  const MyApp({Key key}) : super(key: key);
+
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  String value = 'Test';
+
+  void clickMe() {
+    setState(() {
+      value = 'shaam';
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('AppBar'),
+        flexibleSpace: SafeArea(
+          child: Icon(
+            Icons.camera,
+            color: Colors.white,
+            size: 55,
+          ),
+        ),
+      ),
+      body: Center(
+        child: RaisedButton(
+          onPressed: () {},
+          textColor: Colors.white,
+          padding: EdgeInsets.all(0),
+          child: Container(
+            child: Text(
+              'Click Me',
+              style: TextStyle(fontSize: 20),
+            ),
+            padding: EdgeInsets.all(15),
+            decoration: BoxDecoration(
+                gradient: LinearGradient(colors: [
+              Colors.blue,
+              Colors.blueAccent,
+              Colors.grey,
+            ])),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+16)Rich Text
+
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(
+    MaterialApp(
+      home: MyApp(),
+    ),
+  );
+}
+
+class MyApp extends StatefulWidget {
+  const MyApp({Key key}) : super(key: key);
+
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  String value = 'Test';
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        appBar: AppBar(
+          title: Text('AppBar'),
+          centerTitle: true,
+        ),
+        body: RichText(
+          text: TextSpan(
+              text: 'Shaam',
+              style: TextStyle(
+                color: Colors.purple,
+                fontSize: 29,
+                decoration: TextDecoration.underline,
+                decorationStyle: TextDecorationStyle.dotted,
+                fontStyle: FontStyle.italic,
+              ),
+              children: [
+                TextSpan(
+                    text: 'natheshwar',
+                    style: TextStyle(
+                        color: Colors.orange,
+                        decoration: TextDecoration.none,
+                        fontStyle: FontStyle.normal)),
+                TextSpan(text: 'goku')
+              ]),
+        ));
+  }
+}
+
+
+17)ButtonBar
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(
+    MaterialApp(
+      home: MyApp(),
+    ),
+  );
+}
+
+class MyApp extends StatefulWidget {
+  const MyApp({Key key}) : super(key: key);
+
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  String value = 'Test';
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        appBar: AppBar(
+          title: Text('AppBar'),
+          centerTitle: true,
+        ),
+        body: Container(
+          child: ButtonBar(
+            // alignment: MainAxisAlignment.center,
+            alignment: MainAxisAlignment.spaceBetween,
+            children: [
+              IconButton(
+                onPressed: () {
+                  print('Home');
+                },
+                icon: Icon(Icons.home),
+              ),
+              IconButton(
+                  onPressed: () {
+                    print('Search');
+                  },
+                  icon: Icon(Icons.search)),
+            ],
+          ),
+        ));
+  }
+}
+
+
+18)Image Widget
+
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(
+    MaterialApp(
+      home: MyApp(),
+    ),
+  );
+}
+
+class MyApp extends StatefulWidget {
+  const MyApp({Key key}) : super(key: key);
+
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  String value = 'Test';
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        appBar: AppBar(
+          title: Text('AppBar'),
+          centerTitle: true,
+        ),
+        body: Container(
+          height: 300,
+          width: double.infinity,
+          child: Image(
+            image: AssetImage('assets/images/rdr.jfif'),
+            fit: BoxFit.fill,
+          ),
+        ),);
+  }
+}
+
+
+19) NetworkImage
+
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(
+    MaterialApp(
+      home: MyApp(),
+    ),
+  );
+}
+
+class MyApp extends StatefulWidget {
+  const MyApp({Key key}) : super(key: key);
+
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  String value = 'Test';
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        appBar: AppBar(
+          title: Text('AppBar'),
+          centerTitle: true,
+        ),
+        body: Center(
+          child: Container(
+            height: 200,
+            width: 300,
+            decoration: BoxDecoration(
+              border: Border.all(width: 2),
+              borderRadius: BorderRadius.circular(5),
+            ),
+            child: Image.network(
+              'https://images.unsplash.com/photo-1664985578539-70b6b3430888?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyfHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=900&q=60',
+              fit: BoxFit.fill,
+            ),
+          ),
+        ));
+  }
+}
+
+20) networkImage and imageAsset
+
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(
+    MaterialApp(
+      home: MyApp(),
+    ),
+  );
+}
+
+class MyApp extends StatefulWidget {
+  const MyApp({Key key}) : super(key: key);
+
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  String value = 'Test';
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        appBar: AppBar(
+          title: Text('AppBar'),
+          centerTitle: true,
+        ),
+        body: Center(
+          child: Container(
+            height: 200,
+            width: 300,
+            decoration: BoxDecoration(
+                border: Border.all(width: 2),
+                borderRadius: BorderRadius.circular(5),
+                image: DecorationImage(
+                    image: NetworkImage(
+                      'https://images.unsplash.com/photo-1664705574330-51deb4e806c3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwzfHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=900&q=60',
+                    ),
+                    fit: BoxFit.cover)),
+            // child: Image.network(
+            //   'https://images.unsplash.com/photo-1664985578539-70b6b3430888?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwyfHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=900&q=60',
+            //   fit: BoxFit.fill,
+            // ),
+          ),
+        ));
+  }
+}
+
+
+21)card
+
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(
+    MaterialApp(
+      home: MyApp(),
+    ),
+  );
+}
+
+class MyApp extends StatefulWidget {
+  const MyApp({Key key}) : super(key: key);
+
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  String value = 'Test';
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        appBar: AppBar(
+          title: Text('AppBar'),
+          centerTitle: true,
+        ),
+        body: Center(
+          child: Card(
+            color: Colors.white,
+            elevation: 10,
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(5),
+            ),
+            child: Container(
+              padding: EdgeInsets.all(10),
+              height: 100,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    'Come on come on turn the radio on its saturday',
+                    style: TextStyle(fontSize: 15),
+                  ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Text(
+                    'shaam',
+                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                  )
+                ],
+              ),
+            ),
+          ),
+        ));
+  }
+}
+
+22)BottomSheetWidget
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(
+    MaterialApp(
+      home: MyApp(),
+    ),
+  );
+}
+
+class MyApp extends StatefulWidget {
+  const MyApp({Key key}) : super(key: key);
+
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  void showBottom() {
+    showModalBottomSheet(
+      context: context,
+      builder: (BuildContext context) {
+        return Container(
+          padding: EdgeInsets.all(15),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text('shaam is here'),
+              RaisedButton(
+                  onPressed: () {
+                    Navigator.pop(context);
+                  },
+                  child: Text(
+                    'Ok',
+                    style: TextStyle(color: Colors.white),
+                  ))
+            ],
+          ),
+        );
+      },
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        appBar: AppBar(
+          title: Text('AppBar'),
+          centerTitle: true,
+        ),
+        body: Center(
+          child: RaisedButton(
+            child: Text('Click Me'),
+            onPressed: showBottom,
+          ),
+        ));
+  }
+}
+
+
+22) singleChildScrollView
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(
+    MaterialApp(
+      home: MyApp(),
+    ),
+  );
+}
+
+class MyApp extends StatefulWidget {
+  const MyApp({Key key}) : super(key: key);
+
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  void showBottom() {
+    showModalBottomSheet(
+      context: context,
+      builder: (BuildContext context) {
+        return Container(
+          padding: EdgeInsets.all(15),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text('shaam is here'),
+              RaisedButton(
+                  onPressed: () {
+                    Navigator.pop(context);
+                  },
+                  child: Text(
+                    'Ok',
+                    style: TextStyle(color: Colors.white),
+                  ))
+            ],
+          ),
+        );
+      },
+    );
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        appBar: AppBar(
+          title: Text('AppBar'),
+          centerTitle: true,
+        ),
+        body: SingleChildScrollView(
+          scrollDirection: Axis.horizontal,
+          child: Row(
+            children: [
+              // Container(
+              //   height: 250,
+              //   color: Colors.red,
+              // ),
+              // Container(
+              //   height: 250,
+              //   color: Colors.green,
+              // ),
+              // Container(
+              //   height: 250,
+              //   color: Colors.yellow,
+              // ),
+
+              Container(
+                height: 100,
+                width: 150,
+                color: Colors.red,
+              ),
+              Container(
+                height: 100,
+                width: 150,
+                color: Colors.red,
+              ),
+              Container(
+                height: 100,
+                width: 150,
+                color: Colors.green,
+              ),
+              Container(
+                height: 100,
+                width: 150,
+                color: Colors.yellow,
+              ),
+            ],
+          ),
+        ));
+  }
+}
+
+23) textFieldWidget
+
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(
+    MaterialApp(
+      home: MyApp(),
+    ),
+  );
+}
+
+class MyApp extends StatefulWidget {
+  const MyApp({Key key}) : super(key: key);
+
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  String _value = '';
+  void _onChanged(String value) {
+    setState(() {
+      _value = 'onChanged: ' + value;
+    });
+  }
+
+  void _onSubmitted(String value) {
+    setState(() {
+      _value = 'onSubmitted: ' + value;
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('AppBar'),
+        centerTitle: true,
+      ),
+      body: Column(
+        children: [
+          Text(_value),
+          TextField(
+            decoration: InputDecoration(labelText: 'Enter Name'),
+            onChanged: _onChanged,
+            onSubmitted: _onSubmitted,
+            keyboardType: TextInputType.number,
+          )
+        ],
+      ),
+    );
+  }
+}
+
+24) dataTableWidget
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(
+    MaterialApp(
+      home: MyApp(),
+    ),
+  );
+}
+
+class MyApp extends StatefulWidget {
+  const MyApp({Key key}) : super(key: key);
+
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  String _value = '';
+  void _onChanged(String value) {
+    setState(() {
+      _value = 'onChanged: ' + value;
+    });
+  }
+
+  void _onSubmitted(String value) {
+    setState(() {
+      _value = 'onSubmitted: ' + value;
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        appBar: AppBar(
+          title: Text('AppBar'),
+          centerTitle: true,
+        ),
+        body: DataTable(
+          columns: [
+            DataColumn(
+              label: Text(
+                'Roll No',
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  color: Colors.black,
+                  fontSize: 15,
+                ),
+              ),
+            ),
+            DataColumn(
+              label: Text(
+                'name',
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  color: Colors.black,
+                  fontSize: 15,
+                ),
+              ),
+            ),
+          ],
+          rows: [
+            DataRow(cells: [DataCell(Text('Ae1001')), DataCell(Text('shaam'))]),
+            DataRow(cells: [DataCell(Text('Ae1002')), DataCell(Text('nath'))])
+          ],
+        ));
+  }
+}
+
+25) checkBox
+
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(
+    MaterialApp(
+      home: MyApp(),
+    ),
+  );
+}
+
+class MyApp extends StatefulWidget {
+  const MyApp({Key key}) : super(key: key);
+
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  bool mon = false;
+  bool tue = false;
+  bool wed = false;
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        appBar: AppBar(
+          title: Text('AppBar'),
+          centerTitle: true,
+        ),
+        body: Center(
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text('Mon'),
+              Checkbox(
+                  value: mon,
+                  onChanged: (bool value) {
+                    setState(() {
+                      mon = value;
+                    });
+                  })
+            ],
+          ),
+        ));
+  }
+}
+
+26) navigation
+
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(
+    MaterialApp(
+      home: MyApp(),
+    ),
+  );
+}
+
+class MyApp extends StatefulWidget {
+  const MyApp({Key key}) : super(key: key);
+
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  bool mon = false;
+  bool tue = false;
+  bool wed = false;
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('AppBar'),
+        centerTitle: true,
+      ),
+      floatingActionButton: FloatingActionButton(
+        child: Icon(Icons.navigate_next_sharp),
+        onPressed: () {
+          Navigator.of(context).push(
+            MaterialPageRoute(
+              builder: (context) => SecondPage(),
+            ),
+          );
+        },
+      ),
+    );
+  }
+}
+
+class SecondPage extends StatelessWidget {
+  const SecondPage({Key key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('SecondPage'),
+      ),
+      body: Center(
+        child: Text('page-1'),
+      ),
+      floatingActionButton: FloatingActionButton(
+        child: Icon(Icons.navigate_before),
+        onPressed: () {
+          Navigator.pop(context);
+        },
+      ),
+    );
+  }
+}
+
+27) outLineButton
+
+import 'package:flutter/material.dart';
+
+void main(List<String> args) {
+  runApp(
+    MaterialApp(
+      home: MyApp(),
+    ),
+  );
+}
+
+class MyApp extends StatefulWidget {
+  const MyApp({Key key}) : super(key: key);
+
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Center(
+        child: OutlinedButton(
+          onPressed: () {},
+          child: Text(
+            'Click Me',
+            style: TextStyle(
+              fontSize: 18,
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+28) stack and Positioned
+
+import 'package:flutter/material.dart';
+
+void main(List<String> args) {
+  runApp(
+    MaterialApp(
+      home: MyApp(),
+    ),
+  );
+}
+
+class MyApp extends StatefulWidget {
+  const MyApp({Key key}) : super(key: key);
+
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Center(
+        child: Container(
+          height: 500,
+          width: 300,
+          color: Colors.blueGrey,
+          child: Stack(
+            // fit: StackFit.loose,
+            // fit: StackFit.expand,
+            // alignment: Alignment.topRight,
+            // alignment: Alignment.bottomRight,
+
+            alignment: Alignment.topCenter,
+            children: [
+              Container(
+                height: 250,
+                width: 250,
+                color: Colors.green,
+              ),
+              Positioned(
+                bottom: 0,
+                left: 0,
+                child: Container(
+                  height: 100,
+                  width: 100,
+                  color: Colors.red,
+                ),
+              )
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+
+29)customIconButton
+
+import 'package:flutter/material.dart';
+
+void main(List<String> args) {
+  runApp(
+    MaterialApp(
+      home: MyApp(),
+    ),
+  );
+}
+
+class MyApp extends StatefulWidget {
+  const MyApp({Key key}) : super(key: key);
+
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Center(
+        child: CircularButton(
+          height: 60,
+          width: 60,
+          icon: Icon(
+            Icons.add,
+            color: Colors.white,
+          ),
+          color: Colors.red,
+          onClick: () {
+            print('Button Clicked');
+          },
+        ),
+      ),
+    );
+  }
+}
+
+class CircularButton extends StatelessWidget {
+  double width;
+  double height;
+  Color color;
+  Icon icon;
+  Function onClick;
+  CircularButton(
+      {this.width, this.height, this.color, this.icon, this.onClick});
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      decoration: BoxDecoration(color: color, shape: BoxShape.circle),
+      width: width,
+      height: height,
+      child: IconButton(
+        icon: icon,
+        onPressed: onClick,
+      ),
+    );
+  }
+}
+
+
+30)slider
+
+import 'package:flutter/material.dart';
+
+void main(List<String> args) {
+  runApp(
+    MaterialApp(
+      home: MyApp(),
+    ),
+  );
+}
+
+class MyApp extends StatefulWidget {
+  const MyApp({Key key}) : super(key: key);
+
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  double rate = 0;
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Center(
+        child: Slider(
+          value: rate,
+          onChanged: (newRate) {
+            setState(() {
+              rate = newRate;
+            });
+          },
+          min: 0,
+          max: 100,
+          divisions: 4,
+          label: '$rate',
+        ),
+      ),
+    );
+  }
+}
+
+31)AnimatedContainer
+
+import 'package:flutter/material.dart';
+
+void main(List<String> args) {
+  runApp(
+    MaterialApp(
+      home: MyApp(),
+    ),
+  );
+}
+
+class MyApp extends StatefulWidget {
+  const MyApp({Key key}) : super(key: key);
+
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  var _width = 100.0;
+  var _height = 100.0;
+
+  void AnimationFunction() {
+    setState(() {
+      _width = _width == 100.0 ? 200.0 : 100.0;
+      _height = _height == 100.0 ? 200.0 : 100.0;
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        body: Container(
+            alignment: Alignment.center,
+            padding: EdgeInsets.all(15),
+            child: Column(
+              children: [
+                AnimatedContainer(
+                  duration: Duration(seconds: 1),
+                  curve: Curves.bounceIn,
+                  height: _height,
+                  width: _width,
+                  color: Colors.brown,
+                ),
+                RaisedButton(
+                    onPressed: () {
+                      AnimationFunction();
+                    },
+                    color: Colors.blue,
+                    child: Text(
+                      'Click Me',
+                      style: TextStyle(color: Colors.white),
+                    ))
+              ],
+            )));
+  }
+}
+
+
+32) customAlertDialog
+
+import 'package:flutter/material.dart';
+
+void main(List<String> args) {
+  runApp(
+    MaterialApp(
+      home: MyApp(),
+    ),
+  );
+}
+
+class MyApp extends StatefulWidget {
+  const MyApp({Key key}) : super(key: key);
+
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Center(
+        child: RaisedButton(
+          child: Text(
+            'click me',
+            style: TextStyle(color: Colors.white),
+          ),
+          color: Colors.red,
+          onPressed: () {
+            String title = 'Normal message';
+            String message = 'Beyblade movie boss';
+            showAlertDialog(context, title, message);
+          },
+        ),
+      ),
+    );
+  }
+}
+
+showAlertDialog(BuildContext context, String title, String message) {
+  Widget okbtn = FlatButton(
+    onPressed: () {},
+    child: Text('Ok'),
+  );
+
+  Widget cancelBtn = FlatButton(
+    onPressed: () {},
+    child: Text('Cancel'),
+  );
+
+  AlertDialog alert = AlertDialog(
+    title: Text(
+      title,
+      style: TextStyle(
+        color: Colors.orange,
+      ),
+    ),
+    content: Text(message),
+    actions: [
+      okbtn,
+      okbtn,
+    ],
+  );
+
+  showDialog(
+    context: context,
+    builder: (BuildContext context) {
+      return alert;
+    },
+  );
+}
+
+
+33) bottomNavigationBar
+
+import 'package:flutter/material.dart';
+
+void main(List<String> args) {
+  runApp(
+    MaterialApp(
+      home: MyApp(),
+    ),
+  );
+}
+
+class MyApp extends StatefulWidget {
+  const MyApp({Key key}) : super(key: key);
+
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  int index = 0;
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Center(
+        child: Text('AppBar'),
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        type: BottomNavigationBarType.fixed,
+        currentIndex: index,
+        items: [
+          BottomNavigationBarItem(
+            label: 'search',
+            icon: Icon(Icons.home),
+          ),
+          BottomNavigationBarItem(
+            label: 'search',
+            icon: Icon(Icons.search),
+          ),
+        ],
+        onTap: (currentIndex) {
+          setState(() {
+            index = currentIndex;
+          });
+        },
+      ),
+    );
+  }
+}
+
+34) webView
+
+import 'package:flutter/material.dart';
+
+import 'package:webview_flutter/webview_flutter.dart';
+
+void main(List<String> args) {
+  runApp(
+    MaterialApp(
+      home: MyApp(),
+    ),
+  );
+}
+
+class MyApp extends StatefulWidget {
+  const MyApp({Key key}) : super(key: key);
+
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  WebViewController _controller;
+
+  void goBack() async {}
+  void goForward() async {}
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Flutter webView'),
+        backgroundColor: Color(0xff04aa6d),
+        actions: [
+          IconButton(onPressed: null, icon: Icon(Icons.arrow_back)),
+          IconButton(onPressed: null, icon: Icon(Icons.arrow_forward))
+        ],
+      ),
+      body: SafeArea(
+        child: WebView(
+            initialUrl: 'https://www.w3schools.com',
+            javascriptMode: JavascriptMode.unrestricted,
+            onWebViewCreated: (WebViewController web) {
+              _controller = web;
+            }),
+      ),
+    );
+  }
+}
+
+35) refreshIndicator
+
+import 'dart:math';
+
+import 'package:flutter/material.dart';
+
+import 'package:webview_flutter/webview_flutter.dart';
+
+void main(List<String> args) {
+  runApp(
+    MaterialApp(
+      home: MyApp(),
+    ),
+  );
+}
+
+class MyApp extends StatefulWidget {
+  const MyApp({Key key}) : super(key: key);
+
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  List<int> data = [];
+  Future loadList() async {
+    await Future.delayed(
+      Duration(milliseconds: 1000),
+    );
+    final random = Random();
+    final data = List.generate(
+      20,
+      (index) => random.nextInt(100),
+    );
+    setState(() {
+      this.data = data;
+    });
+  }
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    loadList();
+    super.initState();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        appBar: AppBar(
+          title: Text('RefreshIndicator'),
+        ),
+        body: Container(
+          child: RefreshIndicator(
+            strokeWidth: 2,
+            displacement: 100,
+            onRefresh: loadList,
+            child: ListView.builder(
+                itemCount: data.length,
+                itemBuilder: (context, index) {
+                  return ListTile(
+                    title: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          data[index].toString(),
+                          style: TextStyle(
+                            fontSize: 35,
+                          ),
+                        ),
+                      ],
+                    ),
+                  );
+                }),
+          ),
+        ));
+  }
+}
+
+
+36) pageView
+import 'dart:math';
+
+import 'package:flutter/material.dart';
+
+import 'package:webview_flutter/webview_flutter.dart';
+
+void main(List<String> args) {
+  runApp(
+    MaterialApp(
+      home: MyApp(),
+    ),
+  );
+}
+
+class MyApp extends StatefulWidget {
+  const MyApp({Key key}) : super(key: key);
+
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  PageController page = PageController(initialPage: 0);
+  int pageIndex = 0;
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('RefreshIndicator'),
+        actions: [
+          IconButton(
+            onPressed: () {
+              page.animateToPage(--pageIndex,
+                  duration: Duration(milliseconds: 400),
+                  curve: Curves.linearToEaseOut);
+            },
+            icon: Icon(Icons.arrow_back),
+          ),
+          IconButton(
+              onPressed: () {
+                page.animateToPage(++pageIndex,
+                    duration: Duration(milliseconds: 400),
+                    curve: Curves.linearToEaseOut);
+              },
+              icon: Icon(Icons.arrow_back))
+        ],
+      ),
+      body: PageView(
+        controller: page,
+        // scrollDirection: Axis.vertical,
+        pageSnapping: true,
+        children: [
+          Container(
+            color: Colors.deepOrange,
+            child: Center(
+              child: Text(
+                'page-1',
+                style: TextStyle(fontSize: 25, color: Colors.white),
+              ),
+            ),
+          ),
+          Container(
+            color: Colors.yellow,
+            child: Center(
+              child: Text(
+                'page-1',
+                style: TextStyle(fontSize: 25, color: Colors.white),
+              ),
+            ),
+          ),
+          Container(
+            color: Colors.blue,
+            child: Center(
+              child: Text(
+                'page-1',
+                style: TextStyle(fontSize: 25, color: Colors.white),
+              ),
+            ),
+          ),
+          Container(
+            color: Colors.green,
+            child: Center(
+              child: Text(
+                'page-1',
+                style: TextStyle(fontSize: 25, color: Colors.white),
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+37) ImageCarousel
+import 'dart:math';
+
+import 'package:flutter/material.dart';
+
+import 'package:webview_flutter/webview_flutter.dart';
+
+import 'package:carousel_pro/carousel_pro.dart';
+
+void main(List<String> args) {
+  runApp(
+    MaterialApp(
+      home: MyApp(),
+    ),
+  );
+}
+
+class MyApp extends StatefulWidget {
+  const MyApp({Key key}) : super(key: key);
+
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  PageController page = PageController(initialPage: 0);
+  int pageIndex = 0;
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        appBar: AppBar(
+          title: Text('RefreshIndicator'),
+        ),
+        body: SingleChildScrollView(
+          child: Container(
+            height: 300,
+            child: Carousel(
+              boxFit: BoxFit.fill,
+              images: [
+                AssetImage('assets/images/rdr.jfif'),
+                AssetImage('assets/images/rdr.jfif'),
+                AssetImage('assets/images/rdr.jfif'),
+                AssetImage('assets/images/rdr.jfif'),
+                AssetImage('assets/images/rdr.jfif'),
+              ],
+            ),
+          ),
+        ));
+  }
+}
+
+38) Hero
+import 'dart:math';
+
+import 'package:flutter/material.dart';
+
+import 'package:webview_flutter/webview_flutter.dart';
+
+import 'package:carousel_pro/carousel_pro.dart';
+
+void main(List<String> args) {
+  runApp(
+    MaterialApp(
+      home: MyApp(),
+    ),
+  );
+}
+
+class MyApp extends StatefulWidget {
+  const MyApp({Key key}) : super(key: key);
+
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  PageController page = PageController(initialPage: 0);
+  int pageIndex = 0;
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        appBar: AppBar(
+          title: Text('RefreshIndicator'),
+        ),
+        body: InkWell(
+          onTap: () {
+            Navigator.of(context)
+                .push(MaterialPageRoute(builder: (context) => SecondPage()));
+          },
+          child: Center(
+            child: ClipRRect(
+              child: Hero(
+                  tag: 'ssn', child: Image.asset('assets/images/rdr.jfif')),
+            ),
+          ),
+        ));
+  }
+}
+
+class SecondPage extends StatelessWidget {
+  const SecondPage({Key key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Center(
+        child: Hero(tag: 'ssn', child: Image.asset('assets/images/rdr.jfif')),
+      ),
+    );
+  }
+}
+
+39)choiceChip
+import 'dart:math';
+
+import 'package:flutter/material.dart';
+
+import 'package:webview_flutter/webview_flutter.dart';
+
+import 'package:carousel_pro/carousel_pro.dart';
+
+void main(List<String> args) {
+  runApp(
+    MaterialApp(
+      home: MyApp(),
+    ),
+  );
+}
+
+class MyApp extends StatefulWidget {
+  const MyApp({Key key}) : super(key: key);
+
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  bool _isSelected = false;
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('ssn'),
+      ),
+      body: Center(
+        child: ChoiceChip(
+          selectedColor: Colors.blue,
+          label: Text('shaam'),
+          selected: _isSelected,
+          onSelected: (newBoolValue) {
+            setState(() {
+              _isSelected = newBoolValue;
+            });
+          },
+        ),
+      ),
+    );
+  }
+}
+
+40)sliverAppBar
+import 'dart:math';
+
+import 'package:flutter/material.dart';
+
+import 'package:webview_flutter/webview_flutter.dart';
+
+import 'package:carousel_pro/carousel_pro.dart';
+
+void main(List<String> args) {
+  runApp(
+    MaterialApp(
+      home: MyApp(),
+    ),
+  );
+}
+
+class MyApp extends StatefulWidget {
+  const MyApp({Key key}) : super(key: key);
+
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        appBar: AppBar(
+          title: Text('ssn'),
+        ),
+        body: CustomScrollView(
+          slivers: [
+            SliverAppBar(
+              pinned: true,
+              floating: false,
+              title: Text('gg'),
+              expandedHeight: 150,
+              flexibleSpace: FlexibleSpaceBar(
+                title: Text('mapp'),
+                centerTitle: true,
+              ),
+            ),
+            SliverList(
+                delegate: SliverChildListDelegate([
+              Text(
+                'Sliver',
+                style: TextStyle(fontSize: 600),
+              )
+            ]))
+          ],
+        ));
+  }
+}
+41) expandedTileIcon
+import 'dart:math';
+
+import 'package:flutter/material.dart';
+
+import 'package:webview_flutter/webview_flutter.dart';
+
+import 'package:carousel_pro/carousel_pro.dart';
+
+void main(List<String> args) {
+  runApp(
+    MaterialApp(
+      home: MyApp(),
+    ),
+  );
+}
+
+class MyApp extends StatefulWidget {
+  const MyApp({Key key}) : super(key: key);
+
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('ssn'),
+      ),
+      body: ExpansionTile(
+        title: Text('See more'),
+        leading: Icon(Icons.info),
+        children: [
+          ListTile(
+            title: Text('First'),
+          ),
+          ListTile(
+            title: Text('Second'),
+          )
+        ],
+      ),
+    );
+  }
+}
+
+42) wrap
+import 'dart:math';
+
+import 'package:flutter/material.dart';
+
+import 'package:webview_flutter/webview_flutter.dart';
+
+import 'package:carousel_pro/carousel_pro.dart';
+
+void main(List<String> args) {
+  runApp(
+    MaterialApp(
+      home: MyApp(),
+    ),
+  );
+}
+
+class MyApp extends StatefulWidget {
+  const MyApp({Key key}) : super(key: key);
+
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  @override
+  Widget build(BuildContext context) {
+    Widget _image = Padding(
+      padding: EdgeInsets.all(8),
+      child: Image.asset(
+        'assets/images/rdr.jfif',
+        height: 100,
+        width: 100,
+        fit: BoxFit.cover,
+      ),
+    );
+    List<Widget> _list = [
+      _image,
+      _image,
+      _image,
+      _image,
+      _image,
+      _image,
+      _image
+    ];
+    return Scaffold(
+      body: Center(
+        child: Wrap(
+          children: _list,
+        ),
+      ),
+    );
+  }
+}
+
+43) timePicker
+import 'dart:math';
+
+import 'package:flutter/material.dart';
+
+import 'package:webview_flutter/webview_flutter.dart';
+
+import 'package:carousel_pro/carousel_pro.dart';
+
+void main(List<String> args) {
+  runApp(
+    MaterialApp(
+      home: MyApp(),
+    ),
+  );
+}
+
+class MyApp extends StatefulWidget {
+  const MyApp({Key key}) : super(key: key);
+
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  TimeOfDay time = TimeOfDay(hour: 12, minute: 12);
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Center(
+        child: Text(
+          '${time.hour.toString()}:${time.minute.toString()}',
+          style: TextStyle(fontSize: 60),
+        ),
+      ),
+      floatingActionButton: FloatingActionButton(
+          child: Icon(Icons.access_time_filled_outlined),
+          onPressed: () async {
+            TimeOfDay newTime = await showTimePicker(
+              context: context,
+              initialTime: time,
+            );
+            if (newTime != null) {
+              setState(() {
+                time = newTime;
+              });
+            }
+          }),
+    );
+  }
+}
+
+
+44) RangeSlider
+import 'dart:math';
+
+import 'package:flutter/material.dart';
+
+import 'package:webview_flutter/webview_flutter.dart';
+
+import 'package:carousel_pro/carousel_pro.dart';
+
+void main(List<String> args) {
+  runApp(
+    MaterialApp(
+      home: MyApp(),
+    ),
+  );
+}
+
+class MyApp extends StatefulWidget {
+  const MyApp({Key key}) : super(key: key);
+
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  RangeValues values = RangeValues(0.1, 0.5);
+  @override
+  Widget build(BuildContext context) {
+    RangeLabels labels = RangeLabels(
+      values.start.toString(),
+      values.end.toString(),
+    );
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Shaam'),
+      ),
+      body: Center(
+        child: RangeSlider(
+            divisions: 8,
+            labels: labels,
+            values: values,
+            onChanged: (newValues) {
+              setState(() {
+                values = newValues;
+              });
+            }),
+      ),
+    );
+  }
+}
+
+
+45) popUpMenuItem
+import 'dart:math';
+
+import 'package:flutter/material.dart';
+
+import 'package:webview_flutter/webview_flutter.dart';
+
+import 'package:carousel_pro/carousel_pro.dart';
+
+void main(List<String> args) {
+  runApp(
+    MaterialApp(
+      home: MyApp(),
+    ),
+  );
+}
+
+class MyApp extends StatefulWidget {
+  const MyApp({Key key}) : super(key: key);
+
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  String title = 'title';
+  String firstPage = 'FirstPage';
+  String secondPage = 'secondPage';
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(title),
+        actions: [
+          PopupMenuButton(
+            itemBuilder: (context) => [
+              PopupMenuItem(
+                child: Text(firstPage),
+                value: firstPage,
+              ),
+              PopupMenuItem(
+                child: Text(secondPage),
+                value: secondPage,
+              ),
+            ],
+            onSelected: (String newValue) {
+              setState(() {
+                title = newValue;
+              });
+            },
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+46)pageView
+import 'dart:math';
+
+import 'package:flutter/material.dart';
+
+import 'package:webview_flutter/webview_flutter.dart';
+
+import 'package:carousel_pro/carousel_pro.dart';
+
+void main(List<String> args) {
+  runApp(
+    MaterialApp(
+      home: MyApp(),
+    ),
+  );
+}
+
+class MyApp extends StatefulWidget {
+  const MyApp({Key key}) : super(key: key);
+
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  String title = 'title';
+  String firstPage = 'FirstPage';
+  String secondPage = 'secondPage';
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: PageView(
+        children: [
+          Container(
+            color: Colors.blue,
+            child: Center(
+              child: Text(
+                'Page 1',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 60,
+                ),
+              ),
+            ),
+          ),
+          Container(
+            color: Colors.red,
+            child: Center(
+              child: Text(
+                'Page 1',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 60,
+                ),
+              ),
+            ),
+          ),
+          Container(
+            color: Colors.green,
+            child: Center(
+              child: Text(
+                'Page 1',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 60,
+                ),
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+47) bottomNavigationBar
+import 'dart:math';
+
+import 'package:flutter/material.dart';
+
+import 'package:webview_flutter/webview_flutter.dart';
+
+import 'package:carousel_pro/carousel_pro.dart';
+
+void main(List<String> args) {
+  runApp(
+    MaterialApp(
+      home: MyApp(),
+    ),
+  );
+}
+
+class MyApp extends StatefulWidget {
+  const MyApp({Key key}) : super(key: key);
+
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  int _currentIndex = 0;
+  List body = const [
+    Icon(Icons.home),
+    Icon(Icons.menu),
+    Icon(Icons.person),
+  ];
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Center(
+        child: body[_currentIndex],
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        currentIndex: _currentIndex,
+        onTap: (int newIndex) {
+          setState(() {
+            _currentIndex = newIndex;
+          });
+        },
+        items: [
+          BottomNavigationBarItem(
+            label: 'Home',
+            icon: Icon(Icons.home),
+          ),
+          BottomNavigationBarItem(
+              label: 'Home',
+              icon: Icon(
+                Icons.menu,
+              )),
+          BottomNavigationBarItem(label: 'Home', icon: Icon(Icons.person)),
+        ],
+      ),
+    );
+  }
+}
+
+
+48) stepper
+import 'dart:math';
+
+import 'package:flutter/material.dart';
+
+import 'package:webview_flutter/webview_flutter.dart';
+
+import 'package:carousel_pro/carousel_pro.dart';
+
+void main(List<String> args) {
+  runApp(
+    MaterialApp(
+      home: MyApp(),
+    ),
+  );
+}
+
+class MyApp extends StatefulWidget {
+  const MyApp({Key key}) : super(key: key);
+
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  int _currentStep = 1;
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Center(
+        child: Stepper(
+          steps: [
+            Step(
+              title: Text('Step1'),
+              content: Text('Information for step 1'),
+            ),
+            Step(
+              title: Text('Step2'),
+              content: Text('Information for step 2'),
+            ),
+            Step(
+              title: Text('Step3'),
+              content: Text('Information for step 3'),
+            ),
+          ],
+          onStepTapped: (int newIndex) {
+            setState(() {
+              _currentStep = newIndex;
+            });
+          },
+          currentStep: _currentStep,
+          onStepContinue: () {
+            if (_currentStep != 2) {
+              setState(() {
+                _currentStep += 1;
+              });
+            }
+          },
+          onStepCancel: () {
+            if (_currentStep != 0) {
+              setState(() {
+                _currentStep -= 1;
+              });
+            }
+          },
+        ),
+      ),
+    );
+  }
+}
+
+49)showModalBottomSheet
+import 'dart:math';
+
+import 'package:flutter/material.dart';
+
+import 'package:webview_flutter/webview_flutter.dart';
+
+import 'package:carousel_pro/carousel_pro.dart';
+
+void main(List<String> args) {
+  runApp(
+    MaterialApp(
+      home: MyApp(),
+    ),
+  );
+}
+
+class MyApp extends StatefulWidget {
+  const MyApp({Key key}) : super(key: key);
+
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  int _currentStep = 1;
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Center(
+        child: ElevatedButton(
+          child: Text('Modal sheet'),
+          onPressed: () {
+            showModalBottomSheet(
+              context: context,
+              builder: (BuildContext context) {
+                return SizedBox(
+                  height: 400,
+                  child: Center(
+                    child: ElevatedButton(
+                      child: Text('Close'),
+                      onPressed: () {
+                        Navigator.pop(context);
+                      },
+                    ),
+                  ),
+                );
+              },
+            );
+          },
+        ),
+      ),
+    );
+  }
+}
+
+50) Animation CrossFade
+import 'dart:math';
+
+import 'package:flutter/material.dart';
+
+import 'package:webview_flutter/webview_flutter.dart';
+
+import 'package:carousel_pro/carousel_pro.dart';
+
+void main(List<String> args) {
+  runApp(
+    MaterialApp(
+      home: MyApp(),
+    ),
+  );
+}
+
+class MyApp extends StatefulWidget {
+  const MyApp({Key key}) : super(key: key);
+
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  bool _bool = true;
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        actions: [
+          TextButton(
+              onPressed: () {
+                setState(() {
+                  _bool = !_bool;
+                });
+              },
+              child: Text(
+                'Switch',
+                style: TextStyle(color: Colors.white),
+              ))
+        ],
+      ),
+      body: Center(
+        child: AnimatedCrossFade(
+            firstChild: Image.asset(
+              'assets/images/rdr.jfif',
+              width: 350,
+            ),
+            secondChild: Image.asset(
+              'assets/images/rdr.jfif',
+              width: 200,
+            ),
+            crossFadeState:
+                _bool ? CrossFadeState.showFirst : CrossFadeState.showSecond,
+            duration: Duration(seconds: 1)),
+      ),
+    );
+  }
+}
+
+51)search
+import 'dart:math';
+
+import 'package:flutter/material.dart';
+
+import 'package:webview_flutter/webview_flutter.dart';
+
+import 'package:carousel_pro/carousel_pro.dart';
+
+void main(List<String> args) {
+  runApp(
+    MaterialApp(
+      home: MyApp(),
+    ),
+  );
+}
+
+class MyApp extends StatefulWidget {
+  const MyApp({Key key}) : super(key: key);
+
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  bool _bool = true;
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        actions: [
+          IconButton(
+              onPressed: () {
+                showSearch(
+                  context: context,
+                  delegate: CustomSearchDelegate(),
+                );
+              },
+              icon: Icon(Icons.search))
+        ],
+      ),
+      body: Center(),
+    );
+  }
+}
+
+class CustomSearchDelegate extends SearchDelegate {
+  List<String> searchTerms = ['Apple', 'Banana', 'Mango', 'PineApple'];
+  @override
+  List<Widget> buildActions(BuildContext context) {
+    return [
+      IconButton(
+          onPressed: () {
+            query = '';
+          },
+          icon: Icon(Icons.clear))
+    ];
+  }
+
+  @override
+  Widget buildLeading(BuildContext context) {
+    return IconButton(
+      onPressed: () {
+        close(context, null);
+      },
+      icon: Icon(Icons.arrow_back),
+    );
+  }
+
+  Widget buildResults(BuildContext context) {
+    List<String> matchQuery = [];
+    for (var fruit in searchTerms) {
+      if (fruit.toLowerCase().contains(query.toLowerCase())) {
+        matchQuery.add(fruit);
+      }
+    }
+    return ListView.builder(
+        itemCount: matchQuery.length,
+        itemBuilder: (context, index) {
+          var result = matchQuery[index];
+          return ListTile(
+            title: Text(result),
+          );
+        });
+  }
+
+  Widget buildSuggestions(BuildContext context) {
+    List<String> matchQuery = [];
+    for (var fruit in searchTerms) {
+      if (fruit.toLowerCase().contains(query.toLowerCase())) {
+        matchQuery.add(fruit);
+      }
+    }
+    return ListView.builder(
+        itemCount: matchQuery.length,
+        itemBuilder: (context, index) {
+          var result = matchQuery[index];
+          return ListTile(
+            title: Text(result),
+          );
+        });
+  }
+}
+
+52) simpleDialog
+import 'dart:math';
+
+import 'package:flutter/material.dart';
+
+import 'package:webview_flutter/webview_flutter.dart';
+
+import 'package:carousel_pro/carousel_pro.dart';
+
+void main(List<String> args) {
+  runApp(
+    MaterialApp(
+      home: MyApp(),
+    ),
+  );
+}
+
+class MyApp extends StatefulWidget {
+  const MyApp({Key key}) : super(key: key);
+
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  bool _bool = true;
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: Text('hi')),
+      body: Center(
+        child: ElevatedButton(onPressed: () {
+          showDialog(
+              context: context,
+              builder: (context) => SimpleDialog(
+                    title: Text('flutterMa'),
+                    contentPadding: EdgeInsets.all(20),
+                    children: [
+                      Text('moreInformation'),
+                      TextButton(
+                        onPressed: () {
+                          Navigator.pop(context);
+                        },
+                        child: Text('Close'),
+                      ),
+                    ],
+                  ));
+        }),
+      ),
+    );
+  }
+}
+
+53) expanded
+
+import 'dart:math';
+
+import 'package:flutter/material.dart';
+
+import 'package:webview_flutter/webview_flutter.dart';
+
+import 'package:carousel_pro/carousel_pro.dart';
+
+void main(List<String> args) {
+  runApp(
+    MaterialApp(
+      home: MyApp(),
+    ),
+  );
+}
+
+class MyApp extends StatefulWidget {
+  const MyApp({Key key}) : super(key: key);
+
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  bool _bool = true;
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Center(
+        child: Column(
+          children: [
+            Expanded(
+              flex: 1,
+              child: Container(
+                color: Colors.blue,
+                height: 200,
+              ),
+            ),
+            Expanded(
+              flex: 1,
+              child: Container(
+                color: Colors.red,
+                height: 200,
+              ),
+            ),
+            Expanded(
+              flex: 3,
+              child: Container(
+                color: Colors.green,
+                height: 200,
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+54) willPopUpScope
+import 'dart:math';
+
+import 'package:flutter/material.dart';
+
+import 'package:webview_flutter/webview_flutter.dart';
+
+import 'package:carousel_pro/carousel_pro.dart';
+
+void main(List<String> args) {
+  runApp(
+    MaterialApp(
+      home: MyApp(),
+    ),
+  );
+}
+
+class MyApp extends StatefulWidget {
+  const MyApp({Key key}) : super(key: key);
+
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  bool _bool = true;
+  @override
+  Widget build(BuildContext context) {
+    return WillPopScope(
+      child: Scaffold(
+        appBar: AppBar(
+          leading: IconButton(onPressed: () {
+            Navigator.of(context).pop();
+          }),
+        ),
+        body: Center(),
+      ),
+      onWillPop: () async {
+        return false;
+      },
+    );
+  }
+}
+
+55) datePicker
+import 'dart:math';
+
+import 'package:flutter/material.dart';
+
+import 'package:webview_flutter/webview_flutter.dart';
+
+import 'package:carousel_pro/carousel_pro.dart';
+
+void main(List<String> args) {
+  runApp(
+    MaterialApp(
+      home: MyApp(),
+    ),
+  );
+}
+
+class MyApp extends StatefulWidget {
+  const MyApp({Key key}) : super(key: key);
+
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  DateTime _dateTime = DateTime(2100);
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        body: Center(
+            child: Column(mainAxisSize: MainAxisSize.min, children: [
+      Text(
+        '${_dateTime.day}-${_dateTime.month}-${_dateTime.year}',
+        style: TextStyle(fontSize: 40),
+      ),
+      ElevatedButton(
+          onPressed: () async {
+            DateTime _newDate = await showDatePicker(
+              context: context,
+              initialDate: _dateTime,
+              firstDate: DateTime(1800),
+              lastDate: DateTime(3000),
+            );
+            if (_newDate != null) {
+              setState(() {
+                _dateTime = _newDate;
+              });
+            }
+          },
+          child: Text('Get Date'))
+    ])));
+  }
+}
+56) futureBuilder
+import 'dart:math';
+
+import 'package:flutter/material.dart';
+
+import 'package:webview_flutter/webview_flutter.dart';
+
+import 'package:carousel_pro/carousel_pro.dart';
+
+void main(List<String> args) {
+  runApp(
+    MaterialApp(
+      home: MyApp(),
+    ),
+  );
+}
+
+class MyApp extends StatefulWidget {
+  const MyApp({Key key}) : super(key: key);
+
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+Future<String> getData() async {
+  await Future.delayed(
+    Duration(seconds: 1),
+  );
+  throw 'An error occured';
+  // return 'it works';
+}
+
+class _MyAppState extends State<MyApp> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        body: Center(
+      child: FutureBuilder(
+        future: getData(),
+        builder: (context, snapshot) {
+          if (snapshot.connectionState == ConnectionState.waiting) {
+            return CircularProgressIndicator.adaptive();
+          }
+          if (snapshot.hasError) {
+            return Text(snapshot.error.toString());
+          } else {
+            return Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Text(snapshot.data.toString()),
+                ElevatedButton(
+                    onPressed: () {
+                      setState(() {});
+                    },
+                    child: Text('refresh'))
+              ],
+            );
+          }
+        },
+      ),
+    ));
+  }
+}
+
+57)gridPaper
+import 'dart:math';
+
+import 'package:flutter/material.dart';
+
+import 'package:webview_flutter/webview_flutter.dart';
+
+import 'package:carousel_pro/carousel_pro.dart';
+
+void main(List<String> args) {
+  runApp(
+    MaterialApp(
+      home: MyApp(),
+    ),
+  );
+}
+
+class MyApp extends StatefulWidget {
+  const MyApp({Key key}) : super(key: key);
+
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+Future<String> getData() async {
+  await Future.delayed(
+    Duration(seconds: 1),
+  );
+  throw 'An error occured';
+  // return 'it works';
+}
+
+class _MyAppState extends State<MyApp> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        body: SizedBox(
+      height: double.infinity,
+      width: double.infinity,
+      child: GridPaper(
+        color: Colors.pink,
+        divisions: 1,
+        interval: 200,
+        subdivisions: 8,
+      ),
+    ));
+  }
+}
+
+58)toolTip
+import 'dart:math';
+
+import 'package:flutter/material.dart';
+
+import 'package:webview_flutter/webview_flutter.dart';
+
+import 'package:carousel_pro/carousel_pro.dart';
+
+void main(List<String> args) {
+  runApp(
+    MaterialApp(
+      home: MyApp(),
+    ),
+  );
+}
+
+class MyApp extends StatefulWidget {
+  const MyApp({Key key}) : super(key: key);
+
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+Future<String> getData() async {
+  await Future.delayed(
+    Duration(seconds: 1),
+  );
+  throw 'An error occured';
+  // return 'it works';
+}
+
+class _MyAppState extends State<MyApp> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Center(
+        child: Tooltip(
+          message: 'ImageMessage',
+          child: Image.asset('assets/images/rdr.jfif'),
+        ),
+      ),
+    );
+  }
+}
+
+59) futureBuilder
+
+import 'dart:math';
+
+import 'package:flutter/material.dart';
+
+import 'package:webview_flutter/webview_flutter.dart';
+
+import 'package:carousel_pro/carousel_pro.dart';
+
+void main(List<String> args) {
+  runApp(
+    MaterialApp(
+      home: MyApp(),
+    ),
+  );
+}
+
+class MyApp extends StatefulWidget {
+  const MyApp({Key key}) : super(key: key);
+
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+Stream<int> generateStream = (() async* {
+  await Future.delayed(Duration(seconds: 2));
+  yield 1;
+  await Future.delayed(Duration(seconds: 1));
+  yield 2;
+  await Future.delayed(Duration(seconds: 1));
+  yield 3;
+})();
+
+class _MyAppState extends State<MyApp> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Center(
+        child: StreamBuilder(
+          stream: generateStream,
+          initialData: 0,
+          builder: (context, snapshot) {
+            if (snapshot.connectionState == ConnectionState.waiting) {
+              return CircularProgressIndicator.adaptive();
+            }
+            if (snapshot.hasError) {
+              return Text('Error');
+            } else {
+              return Text(
+                snapshot.data.toString(),
+                style: TextStyle(fontSize: 40),
+              );
+            }
+          },
+        ),
+      ),
+    );
+  }
+}
+
+60) spacer
+
+import 'dart:math';
+
+import 'package:flutter/material.dart';
+
+import 'package:webview_flutter/webview_flutter.dart';
+
+import 'package:carousel_pro/carousel_pro.dart';
+
+void main(List<String> args) {
+  runApp(
+    MaterialApp(
+      home: MyApp(),
+    ),
+  );
+}
+
+class MyApp extends StatefulWidget {
+  const MyApp({Key key}) : super(key: key);
+
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+Stream<int> generateStream = (() async* {
+  await Future.delayed(Duration(seconds: 2));
+  yield 1;
+  await Future.delayed(Duration(seconds: 1));
+  yield 2;
+  await Future.delayed(Duration(seconds: 1));
+  yield 3;
+})();
+
+class _MyAppState extends State<MyApp> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Column(
+        children: [
+          Container(
+            color: Colors.blue,
+            height: 100,
+          ),
+          Spacer(
+            flex: 1,
+          ),
+          Container(
+            color: Colors.green,
+            height: 100,
+          ),
+          Spacer(
+            flex: 2,
+          ),
+          Container(
+            color: Colors.yellow,
+            height: 100,
+          ),
+          Spacer(),
+        ],
+      ),
+    );
+  }
+}
+
+61) adaptive Tile
+import 'dart:math';
+
+import 'package:flutter/material.dart';
+
+import 'package:webview_flutter/webview_flutter.dart';
+
+import 'package:carousel_pro/carousel_pro.dart';
+
+void main(List<String> args) {
+  runApp(
+    MaterialApp(
+      home: MyApp(),
+    ),
+  );
+}
+
+class MyApp extends StatefulWidget {
+  const MyApp({Key key}) : super(key: key);
+
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+Stream<int> generateStream = (() async* {
+  await Future.delayed(Duration(seconds: 2));
+  yield 1;
+  await Future.delayed(Duration(seconds: 1));
+  yield 2;
+  await Future.delayed(Duration(seconds: 1));
+  yield 3;
+})();
+
+class _MyAppState extends State<MyApp> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        body: Center(
+            child: Column(
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+      children: [
+        Slider.adaptive(
+          value: 1,
+          onChanged: (double newValue) {},
+        ),
+        SwitchListTile.adaptive(value: true, onChanged: (bool newValue) {}),
+        Switch.adaptive(value: true, onChanged: (bool newValue) {})
+      ],
+    )));
+  }
+}
+
+62) tableWidget and RowWidget
+import 'dart:math';
+
+import 'package:flutter/material.dart';
+
+import 'package:webview_flutter/webview_flutter.dart';
+
+import 'package:carousel_pro/carousel_pro.dart';
+
+void main(List<String> args) {
+  runApp(
+    MaterialApp(
+      home: MyApp(),
+    ),
+  );
+}
+
+class MyApp extends StatefulWidget {
+  const MyApp({Key key}) : super(key: key);
+
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+Stream<int> generateStream = (() async* {
+  await Future.delayed(Duration(seconds: 2));
+  yield 1;
+  await Future.delayed(Duration(seconds: 1));
+  yield 2;
+  await Future.delayed(Duration(seconds: 1));
+  yield 3;
+})();
+
+class _MyAppState extends State<MyApp> {
+  @override
+  Widget build(BuildContext context) {
+    TableRow _tableRow = TableRow(children: [
+      Padding(
+        padding: EdgeInsets.all(10),
+        child: Text('Cell1'),
+      ),
+      Padding(
+        padding: EdgeInsets.all(10),
+        child: Text('Cell2'),
+      ),
+    ]);
+    return Scaffold(
+      body: Center(
+        child: Table(
+          border: TableBorder.all(),
+          children: [
+            _tableRow,
+            _tableRow,
+            _tableRow,
+            _tableRow,
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+63) fittedBox
+
+import 'dart:math';
+
+import 'package:flutter/material.dart';
+
+import 'package:webview_flutter/webview_flutter.dart';
+
+import 'package:carousel_pro/carousel_pro.dart';
+
+void main(List<String> args) {
+  runApp(
+    MaterialApp(
+      home: MyApp(),
+    ),
+  );
+}
+
+class MyApp extends StatefulWidget {
+  const MyApp({Key key}) : super(key: key);
+
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+Stream<int> generateStream = (() async* {
+  await Future.delayed(Duration(seconds: 2));
+  yield 1;
+  await Future.delayed(Duration(seconds: 1));
+  yield 2;
+  await Future.delayed(Duration(seconds: 1));
+  yield 3;
+})();
+
+class _MyAppState extends State<MyApp> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Center(
+        child: Container(
+          width: 300,
+          height: 150,
+          color: Colors.red,
+          padding: EdgeInsets.all(10),
+          child: FittedBox(
+            child: Text(
+              'SHAAM',
+              style: TextStyle(
+                fontSize: 100,
+                color: Colors.white,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+64) visibility
+import 'dart:math';
+
+import 'package:flutter/material.dart';
+
+import 'package:webview_flutter/webview_flutter.dart';
+
+import 'package:carousel_pro/carousel_pro.dart';
+
+void main(List<String> args) {
+  runApp(
+    MaterialApp(
+      home: MyApp(),
+    ),
+  );
+}
+
+class MyApp extends StatefulWidget {
+  const MyApp({Key key}) : super(key: key);
+
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+Stream<int> generateStream = (() async* {
+  await Future.delayed(Duration(seconds: 2));
+  yield 1;
+  await Future.delayed(Duration(seconds: 1));
+  yield 2;
+  await Future.delayed(Duration(seconds: 1));
+  yield 3;
+})();
+
+class _MyAppState extends State<MyApp> {
+  bool _isVisible = true;
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        appBar: AppBar(
+          actions: [
+            TextButton(
+                onPressed: () {
+                  setState(() {
+                    _isVisible = !_isVisible;
+                  });
+                },
+                child: Text(
+                  'Switch',
+                  style: TextStyle(color: Colors.white),
+                ))
+          ],
+        ),
+        body: SizedBox(
+          width: double.infinity,
+          child: Center(
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Image.asset(
+                  'assets/images/rdr.jfif',
+                  height: 100,
+                ),
+                Visibility(
+                    visible: _isVisible,
+                    child: Image.asset('assets/images/rdr.jfif')),
+                Image.asset(
+                  'assets/images/rdr.jfif',
+                  height: 100,
+                ),
+              ],
+            ),
+          ),
+        ));
+  }
+}
+
+65) spreadOperator
+import 'dart:math';
+
+import 'package:flutter/material.dart';
+
+import 'package:webview_flutter/webview_flutter.dart';
+
+import 'package:carousel_pro/carousel_pro.dart';
+
+void main(List<String> args) {
+  runApp(
+    MaterialApp(
+      home: MyApp(),
+    ),
+  );
+}
+
+class MyApp extends StatefulWidget {
+  const MyApp({Key key}) : super(key: key);
+
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+Stream<int> generateStream = (() async* {
+  await Future.delayed(Duration(seconds: 2));
+  yield 1;
+  await Future.delayed(Duration(seconds: 1));
+  yield 2;
+  await Future.delayed(Duration(seconds: 1));
+  yield 3;
+})();
+
+class _MyAppState extends State<MyApp> {
+  bool _isVisible = true;
+  @override
+  Widget build(BuildContext context) {
+    List<Widget> imageList = [
+      Image.asset(
+        'assets/images/rdr.jfif',
+        height: 100,
+      ),
+      Image.asset(
+        'assets/images/rdr.jfif',
+        height: 100,
+      ),
+      Image.asset(
+        'assets/images/rdr.jfif',
+        height: 100,
+      ),
+    ];
+    return Scaffold(
+      body: Column(
+        children: [...imageList],
+      ),
+    );
+  }
+}
+
+66) alertDialog
+import 'dart:math';
+
+import 'package:flutter/material.dart';
+
+import 'package:webview_flutter/webview_flutter.dart';
+
+import 'package:carousel_pro/carousel_pro.dart';
+
+void main(List<String> args) {
+  runApp(
+    MaterialApp(
+      home: MyApp(),
+    ),
+  );
+}
+
+class MyApp extends StatefulWidget {
+  const MyApp({Key key}) : super(key: key);
+
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+Stream<int> generateStream = (() async* {
+  await Future.delayed(Duration(seconds: 2));
+  yield 1;
+  await Future.delayed(Duration(seconds: 1));
+  yield 2;
+  await Future.delayed(Duration(seconds: 1));
+  yield 3;
+})();
+
+class _MyAppState extends State<MyApp> {
+  bool _isVisible = true;
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Center(
+        child: ElevatedButton(
+            onPressed: () {
+              showDialog(
+                context: context,
+                builder: (context) => AlertDialog(
+                  actions: [
+                    TextButton(
+                      onPressed: () {
+                        Navigator.pop(context);
+                      },
+                      child: Text('Close'),
+                    ),
+                  ],
+                  title: Text('shaam'),
+                  contentPadding: EdgeInsets.all(20),
+                  content: Text('This is alertDialog'),
+                ),
+              );
+            },
+            child: Text('AlertDialog')),
+      ),
+    );
+  }
+}
+
+67) selectableText
+
+import 'dart:math';
+
+import 'package:flutter/material.dart';
+
+import 'package:webview_flutter/webview_flutter.dart';
+
+import 'package:carousel_pro/carousel_pro.dart';
+
+void main(List<String> args) {
+  runApp(
+    MaterialApp(
+      home: MyApp(),
+    ),
+  );
+}
+
+class MyApp extends StatefulWidget {
+  const MyApp({Key key}) : super(key: key);
+
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  String selectedText = '';
+  final String _selectableText = 'This is a selectable text';
+  final TextStyle _styleBlue = TextStyle(
+    fontSize: 25,
+    fontWeight: FontWeight.bold,
+    color: Colors.blue,
+  );
+  final TextStyle _style = TextStyle(
+    fontSize: 25,
+    fontWeight: FontWeight.bold,
+  );
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            Text(
+              selectedText,
+              style: _styleBlue,
+            ),
+            TextSelectionTheme(
+              data: TextSelectionThemeData(selectionColor: Colors.amber),
+              child: SelectableText(
+                _selectableText,
+                style: _style,
+                onSelectionChanged: (selection, cause) {
+                  setState(() {
+                    selectedText = _selectableText.substring(
+                        selection.start, selection.end);
+                  });
+                },
+              ),
+            )
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+68) gestureDetector
+import 'dart:math';
+
+import 'package:flutter/material.dart';
+
+import 'package:webview_flutter/webview_flutter.dart';
+
+import 'package:carousel_pro/carousel_pro.dart';
+
+void main(List<String> args) {
+  runApp(
+    MaterialApp(
+      home: MyApp(),
+    ),
+  );
+}
+
+class MyApp extends StatefulWidget {
+  const MyApp({Key key}) : super(key: key);
+
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  int _counter = 0;
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Center(
+        child: GestureDetector(
+          onTap: () {
+            setState(() {
+              _counter += 1;
+            });
+          },
+          child: Container(
+            height: 200,
+            width: 200,
+            color: Colors.blue,
+            child: Text(
+              _counter.toString(),
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 30,
+              ),
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+69)inkWell
+import 'dart:math';
+
+import 'package:flutter/material.dart';
+
+import 'package:webview_flutter/webview_flutter.dart';
+
+import 'package:carousel_pro/carousel_pro.dart';
+
+void main(List<String> args) {
+  runApp(
+    MaterialApp(
+      home: MyApp(),
+    ),
+  );
+}
+
+class MyApp extends StatefulWidget {
+  const MyApp({Key key}) : super(key: key);
+
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  Color boxColor = Colors.blue;
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Center(
+          child: InkWell(
+        onDoubleTap: () {
+          setState(() {
+            boxColor = Colors.blue;
+          });
+        },
+        onTap: () {
+          setState(() {
+            boxColor = Colors.green;
+          });
+        },
+        onLongPress: () {
+          setState(() {
+            boxColor = Colors.red;
+          });
+        },
+        child: Ink(
+          height: 200,
+          width: 200,
+          color: boxColor,
+          child: Center(
+            child: FlutterLogo(
+              size: 150,
+            ),
+          ),
+        ),
+      )),
+    );
+  }
+}
+
+70)interActiveViewer
+import 'dart:math';
+
+import 'package:flutter/material.dart';
+
+import 'package:webview_flutter/webview_flutter.dart';
+
+import 'package:carousel_pro/carousel_pro.dart';
+
+void main(List<String> args) {
+  runApp(
+    MaterialApp(
+      home: MyApp(),
+    ),
+  );
+}
+
+class MyApp extends StatefulWidget {
+  const MyApp({Key key}) : super(key: key);
+
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  Color boxColor = Colors.blue;
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Center(
+        child: InteractiveViewer(
+            maxScale: 5, child: Image.asset('assets/images/rdr.jfif')),
+      ),
+    );
+  }
+}
+
+71) checkBox
+import 'dart:math';
+
+import 'package:flutter/material.dart';
+
+import 'package:webview_flutter/webview_flutter.dart';
+
+import 'package:carousel_pro/carousel_pro.dart';
+
+void main(List<String> args) {
+  runApp(
+    MaterialApp(
+      home: MyApp(),
+    ),
+  );
+}
+
+class MyApp extends StatefulWidget {
+  const MyApp({Key key}) : super(key: key);
+
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  bool _isChecked = false;
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Center(
+        child: CheckboxListTile(
+          title: Text('CheckBox'),
+          value: _isChecked,
+          onChanged: (bool newValue) {
+            setState(() {
+              _isChecked = newValue;
+            });
+          },
+          activeColor: Colors.orangeAccent,
+          checkColor: Colors.white,
+        ),
+      ),
+    );
+  }
+}
+72) clipRrect
+import 'dart:math';
+
+import 'package:flutter/material.dart';
+
+import 'package:webview_flutter/webview_flutter.dart';
+
+import 'package:carousel_pro/carousel_pro.dart';
+
+void main(List<String> args) {
+  runApp(
+    MaterialApp(
+      home: MyApp(),
+    ),
+  );
+}
+
+class MyApp extends StatefulWidget {
+  const MyApp({Key key}) : super(key: key);
+
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  bool _isChecked = false;
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Center(
+        child: ClipRRect(
+          borderRadius: BorderRadius.circular(30),
+          child: Image.asset(
+            'assets/images/rdr.jfif',
+            width: 350,
+          ),
+        ),
+      ),
+    );
+  }
+}
+73) flexibleSpace
+import 'dart:math';
+
+import 'package:flutter/material.dart';
+
+import 'package:webview_flutter/webview_flutter.dart';
+
+import 'package:carousel_pro/carousel_pro.dart';
+
+void main(List<String> args) {
+  runApp(
+    MaterialApp(
+      home: MyApp(),
+    ),
+  );
+}
+
+class MyApp extends StatefulWidget {
+  const MyApp({Key key}) : super(key: key);
+
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Column(
+        children: [
+          Flexible(
+            // fit: FlexFit.tight,
+            flex: 4,
+            child: Container(
+              height: 50,
+              color: Colors.blue,
+            ),
+          ),
+          Flexible(
+            child: Container(
+              height: 50,
+              color: Colors.red,
+            ),
+          ),
+          Flexible(
+            child: Container(
+              height: 50,
+              color: Colors.green,
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+73) aboutDialog
+
+import 'dart:math';
+
+import 'package:flutter/material.dart';
+
+import 'package:webview_flutter/webview_flutter.dart';
+
+import 'package:carousel_pro/carousel_pro.dart';
+
+void main(List<String> args) {
+  runApp(
+    MaterialApp(
+      home: MyApp(),
+    ),
+  );
+}
+
+class MyApp extends StatefulWidget {
+  const MyApp({Key key}) : super(key: key);
+
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: ElevatedButton(
+          onPressed: () {
+            showDialog(
+              context: context,
+              builder: (context) => AboutDialog(
+                applicationIcon: FlutterLogo(),
+                applicationLegalese: 'Legalese',
+                applicationName: 'Flutter App',
+                applicationVersion: 'version 1.0.0',
+                children: [],
+              ),
+            );
+          },
+          child: Text('About Dialog')),
+    );
+  }
+}
+
+74)absorbPointer
+import 'dart:math';
+
+import 'package:flutter/material.dart';
+
+import 'package:webview_flutter/webview_flutter.dart';
+
+import 'package:carousel_pro/carousel_pro.dart';
+
+void main(List<String> args) {
+  runApp(
+    MaterialApp(
+      home: MyApp(),
+    ),
+  );
+}
+
+class MyApp extends StatefulWidget {
+  const MyApp({Key key}) : super(key: key);
+
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: Stack(
+        alignment: AlignmentDirectional.center,
+        children: [
+          SizedBox(
+            width: 200,
+            height: 100,
+            child: ElevatedButton(onPressed: () {}, child: null),
+          ),
+          SizedBox(
+            width: 100,
+            height: 200,
+            child: AbsorbPointer(
+              child: ElevatedButton(
+                  style:
+                      ElevatedButton.styleFrom(primary: Colors.blue.shade200),
+                  onPressed: () {},
+                  child: null),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+75) alertDialog
+import 'dart:math';
+
+import 'package:flutter/material.dart';
+
+import 'package:webview_flutter/webview_flutter.dart';
+
+import 'package:carousel_pro/carousel_pro.dart';
+
+void main(List<String> args) {
+  runApp(
+    MaterialApp(
+      home: MyApp(),
+    ),
+  );
+}
+
+class MyApp extends StatefulWidget {
+  const MyApp({Key key}) : super(key: key);
+
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: ElevatedButton(
+        child: Text('show Alert Dialog'),
+        onPressed: () {
+          showDialog(
+            context: context,
+            builder: (context) => AlertDialog(
+              actions: [
+                TextButton(
+                    onPressed: () {
+                      Navigator.of(context).pop();
+                    },
+                    child: Text('Close'))
+              ],
+              title: Text('Shaam'),
+              contentPadding: EdgeInsets.all(20),
+              content: Text('This is alertDialog'),
+            ),
+          );
+        },
+      ),
+    );
+  }
+}
+
+76) align
+import 'dart:math';
+
+import 'package:flutter/material.dart';
+
+import 'package:webview_flutter/webview_flutter.dart';
+
+import 'package:carousel_pro/carousel_pro.dart';
+
+void main(List<String> args) {
+  runApp(
+    MaterialApp(
+      home: MyApp(),
+    ),
+  );
+}
+
+class MyApp extends StatefulWidget {
+  const MyApp({Key key}) : super(key: key);
+
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: Container(
+        height: 120,
+        width: double.infinity,
+        color: Colors.blueGrey,
+        child: Align(
+          alignment: Alignment.bottomLeft,
+          child: FlutterLogo(
+            size: 60,
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+76)animatedAlign
+import 'dart:math';
+
+import 'package:flutter/material.dart';
+
+import 'package:webview_flutter/webview_flutter.dart';
+
+import 'package:carousel_pro/carousel_pro.dart';
+
+void main(List<String> args) {
+  runApp(
+    MaterialApp(
+      home: MyApp(),
+    ),
+  );
+}
+
+class MyApp extends StatefulWidget {
+  const MyApp({Key key}) : super(key: key);
+
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  bool _selected = false;
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: () {
+        setState(() {
+          _selected = !_selected;
+        });
+      },
+      child: Center(
+        child: Container(
+          width: double.infinity,
+          height: 250,
+          color: Colors.blueGrey,
+          child: AnimatedAlign(
+            alignment: _selected ? Alignment.topRight : Alignment.bottomLeft,
+            duration: Duration(seconds: 1),
+            curve: Curves.fastOutSlowIn,
+            child: FlutterLogo(
+              size: 50,
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
+77)animatedContainer
+import 'dart:math';
+
+import 'package:flutter/material.dart';
+
+import 'package:webview_flutter/webview_flutter.dart';
+
+import 'package:carousel_pro/carousel_pro.dart';
+
+void main(List<String> args) {
+  runApp(
+    MaterialApp(
+      home: MyApp(),
+    ),
+  );
+}
+
+class MyApp extends StatefulWidget {
+  const MyApp({Key key}) : super(key: key);
+
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  bool _selected = false;
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: () {
+        setState(() {
+          _selected = !_selected;
+        });
+      },
+      child: Center(
+        child: AnimatedContainer(
+            width: _selected ? 200 : 100,
+            height: _selected ? 100 : 200,
+            curve: Curves.fastOutSlowIn,
+            child: FlutterLogo(
+              size: 75,
+            ),
+            color: _selected ? Colors.blueGrey : Colors.white,
+            alignment:
+                _selected ? Alignment.center : AlignmentDirectional.topCenter,
+            duration: Duration(seconds: 2)),
+      ),
+    );
+  }
+}
+
+78) animationCrossFade
+import 'dart:math';
+
+import 'package:flutter/material.dart';
+
+import 'package:webview_flutter/webview_flutter.dart';
+
+import 'package:carousel_pro/carousel_pro.dart';
+
+void main(List<String> args) {
+  runApp(
+    MaterialApp(
+      home: MyApp(),
+    ),
+  );
+}
+
+class MyApp extends StatefulWidget {
+  const MyApp({Key key}) : super(key: key);
+
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  bool _selected = false;
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.center,
+      children: [
+        SizedBox(
+          width: double.infinity,
+          height: 100,
+        ),
+        TextButton(
+          onPressed: () {
+            _selected = !_selected;
+          },
+          child: Text(
+            'switch',
+            style: TextStyle(color: Colors.white),
+          ),
+        ),
+        AnimatedCrossFade(
+            firstChild: Image.asset('assets/images/rdr.jfif'),
+            secondChild: Image.asset('assets/images/rdr.jfif'),
+            crossFadeState: _selected
+                ? CrossFadeState.showFirst
+                : CrossFadeState.showSecond,
+            duration: Duration(seconds: 1))
+      ],
+    );
+  }
+}
+
+79)animatedDefaultTextStyle
+import 'dart:math';
+
+import 'package:flutter/material.dart';
+
+import 'package:webview_flutter/webview_flutter.dart';
+
+import 'package:carousel_pro/carousel_pro.dart';
+
+void main(List<String> args) {
+  runApp(
+    MaterialApp(
+      home: MyApp(),
+    ),
+  );
+}
+
+class MyApp extends StatefulWidget {
+  const MyApp({Key key}) : super(key: key);
+
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  bool _first = true;
+  double _fontSize = 60;
+  Color _color = Colors.blue;
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        SizedBox(
+          height: 120,
+          child: AnimatedDefaultTextStyle(
+            duration: Duration(milliseconds: 300),
+            style: TextStyle(
+              fontSize: _fontSize,
+              color: _color,
+              fontWeight: FontWeight.bold,
+            ),
+            child: Text('Flutter'),
+          ),
+        ),
+        TextButton(
+            onPressed: () {
+              setState(() {
+                _fontSize = _first ? 90 : 60;
+                _color = _first ? Colors.blue : Colors.red;
+                _first = !_first;
+              });
+            },
+            child: Text('Switch'))
+      ],
+    );
+  }
+}
+
+80)animatedListTile
+import 'dart:math';
+
+import 'package:flutter/material.dart';
+
+import 'package:webview_flutter/webview_flutter.dart';
+
+import 'package:carousel_pro/carousel_pro.dart';
+
+void main(List<String> args) {
+  runApp(
+    MaterialApp(
+      home: MyApp(),
+    ),
+  );
+}
+
+class MyApp extends StatefulWidget {
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  final _items = [];
+  final GlobalKey<AnimatedListState> _key = GlobalKey();
+
+  void _addItem() {
+    _items.insert(0, "Item ${_items.length + 1}");
+    _key.currentState.insertItem(
+      0,
+      duration: Duration(seconds: 1),
+    );
+  }
+
+  void _removeItem(int index) {
+    _key.currentState.removeItem(index, (_, animation) {
+      return SizeTransition(
+        sizeFactor: animation,
+        child: Card(
+          margin: EdgeInsets.all(10),
+          color: Colors.red,
+          child: ListTile(
+            title: Text(
+              'Deleted',
+              style: TextStyle(fontSize: 24),
+            ),
+          ),
+        ),
+      );
+    }, duration: Duration(milliseconds: 300));
+    _items.removeAt(index);
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Column(
+        children: [
+          SizedBox(
+            height: 10,
+          ),
+          IconButton(
+            onPressed: _addItem,
+            icon: Icon(Icons.add),
+          ),
+          Expanded(
+            child: AnimatedList(
+                key: _key,
+                initialItemCount: 0,
+                padding: EdgeInsets.all(8),
+                itemBuilder: (context, index, animation) {
+                  return SizeTransition(
+                    key: UniqueKey(),
+                    sizeFactor: animation,
+                    child: Card(
+                      margin: EdgeInsets.all(10),
+                      color: Colors.orangeAccent,
+                      child: ListTile(
+                        title: Text(
+                          _items[index],
+                          style: TextStyle(fontSize: 24),
+                        ),
+                        trailing: IconButton(
+                          icon: Icon(Icons.delete),
+                          onPressed: () {
+                            _removeItem(index);
+                          },
+                        ),
+                      ),
+                    ),
+                  );
+                }),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+81) fadedLogo
+import 'dart:math';
+
+import 'package:flutter/material.dart';
+
+import 'package:webview_flutter/webview_flutter.dart';
+
+import 'package:carousel_pro/carousel_pro.dart';
+
+void main(List<String> args) {
+  runApp(
+    MaterialApp(
+      home: MyApp(),
+    ),
+  );
+}
+
+class MyApp extends StatefulWidget {
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  double opacityLevel = 1.0;
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          AnimatedOpacity(
+            opacity: opacityLevel,
+            duration: Duration(seconds: 2),
+            child: FlutterLogo(
+              size: 50,
+            ),
+          ),
+          ElevatedButton(
+              onPressed: () {
+                setState(() {
+                  opacityLevel = opacityLevel == 0 ? 1.0 : 0.0;
+                });
+              },
+              child: Text('FadeLogo'))
+        ],
+      ),
+    );
+  }
+}
+
+82)animatedPadding
+import 'dart:math';
+
+import 'package:flutter/material.dart';
+
+import 'package:webview_flutter/webview_flutter.dart';
+
+import 'package:carousel_pro/carousel_pro.dart';
+
+void main(List<String> args) {
+  runApp(
+    MaterialApp(
+      home: MyApp(),
+    ),
+  );
+}
+
+class MyApp extends StatefulWidget {
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  double padValue = 0.0;
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        body: Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        ElevatedButton(
+          style: ElevatedButton.styleFrom(primary: Colors.orangeAccent),
+          onPressed: () {
+            setState(() {
+              padValue = padValue == 0.0 ? 100 : 0.0;
+            });
+          },
+          child: Text('Change Padding'),
+        ),
+        Text('padding = $padValue'),
+        AnimatedPadding(
+          padding: EdgeInsets.all(padValue),
+          duration: Duration(seconds: 2),
+          curve: Curves.easeInOut,
+          child: Container(
+            width: MediaQuery.of(context).size.width,
+            height: MediaQuery.of(context).size.height / 4,
+            color: Colors.orangeAccent,
+          ),
+        ),
+      ],
+    ));
+  }
+}
+
+83) animatedPadding
+import 'dart:math';
+
+import 'package:flutter/material.dart';
+
+import 'package:webview_flutter/webview_flutter.dart';
+
+import 'package:carousel_pro/carousel_pro.dart';
+
+void main(List<String> args) {
+  runApp(
+    MaterialApp(
+      home: MyApp(),
+    ),
+  );
+}
+
+class MyApp extends StatefulWidget {
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  bool _isFlat = true;
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        body: Center(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          AnimatedPhysicalModel(
+            curve: Curves.fastOutSlowIn,
+            shape: BoxShape.rectangle,
+            elevation: _isFlat ? 0 : 6,
+            color: Colors.white,
+            shadowColor: Colors.black,
+            duration: Duration(milliseconds: 500),
+            child: SizedBox(
+              height: 120,
+              width: 120,
+              child: Icon(Icons.android_outlined),
+            ),
+          ),
+          SizedBox(
+            height: 20,
+          ),
+          ElevatedButton(
+              onPressed: () {
+                setState(() {
+                  _isFlat = !_isFlat;
+                });
+              },
+              child: Text('Click'))
+        ],
+      ),
+    ));
+  }
+}
+
+84)animatedPositionedWidget
+import 'dart:math';
+
+import 'package:flutter/material.dart';
+
+import 'package:webview_flutter/webview_flutter.dart';
+
+import 'package:carousel_pro/carousel_pro.dart';
+
+void main(List<String> args) {
+  runApp(
+    MaterialApp(
+      home: MyApp(),
+    ),
+  );
+}
+
+class MyApp extends StatefulWidget {
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  bool selected = false;
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: SizedBox(
+        width: 200,
+        height: 350,
+        child: Stack(
+          children: [
+            AnimatedPositioned(
+                width: selected ? 200 : 50,
+                height: selected ? 50 : 200,
+                top: selected ? 50 : 150,
+                curve: Curves.fastOutSlowIn,
+                child: GestureDetector(
+                  onTap: () {
+                    setState(() {
+                      selected = !selected;
+                    });
+                  },
+                  child: Container(
+                    decoration: BoxDecoration(
+                        color: Colors.orangeAccent,
+                        borderRadius: BorderRadius.circular(25)),
+                  ),
+                ),
+                duration: Duration(seconds: 2))
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+85) animatedRotation
+import 'dart:math';
+
+import 'package:flutter/material.dart';
+
+import 'package:webview_flutter/webview_flutter.dart';
+
+import 'package:carousel_pro/carousel_pro.dart';
+
+void main(List<String> args) {
+  runApp(
+    MaterialApp(
+      home: MyApp(),
+    ),
+  );
+}
+
+class MyApp extends StatefulWidget {
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  double turns = 0.0;
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Padding(
+            padding: EdgeInsets.all(50),
+            child: AnimatedRotation(
+              turns: turns,
+              duration: Duration(seconds: 1),
+              child: FlutterLogo(
+                size: 100,
+              ),
+            ),
+          ),
+          ElevatedButton(
+              style: ElevatedButton.styleFrom(primary: Colors.orangeAccent),
+              onPressed: () {
+                setState(() {
+                  turns += 1 / 4;
+                });
+              },
+              child: Text('RotateLogo'))
+        ],
+      ),
+    );
+  }
+}
+
+86) animatedSizeWidget
+import 'dart:math';
+
+import 'package:flutter/material.dart';
+
+import 'package:webview_flutter/webview_flutter.dart';
+
+import 'package:carousel_pro/carousel_pro.dart';
+
+void main(List<String> args) {
+  runApp(
+    MaterialApp(
+      home: MyApp(),
+    ),
+  );
+}
+
+class MyApp extends StatefulWidget {
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  double _size = 300;
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: GestureDetector(
+        onTap: () {
+          setState(() {
+            _size = _size == 300 ? 100 : 300;
+          });
+        },
+        child: Container(
+          color: Colors.white,
+          child: AnimatedSize(
+            curve: Curves.easeIn,
+            duration: Duration(seconds: 1),
+            child: FlutterLogo(
+              size: _size,
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+87)animatedSwitcher
+import 'dart:math';
+
+import 'package:flutter/material.dart';
+
+import 'package:webview_flutter/webview_flutter.dart';
+
+import 'package:carousel_pro/carousel_pro.dart';
+
+void main(List<String> args) {
+  runApp(
+    MaterialApp(
+      home: MyApp(),
+    ),
+  );
+}
+
+class MyApp extends StatefulWidget {
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  int _count = 0;
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          AnimatedSwitcher(
+              duration: Duration(milliseconds: 500),
+              child: Text(
+                '$_count',
+                style: TextStyle(fontSize: 40),
+                key: ValueKey(_count),
+              ),
+              transitionBuilder: (Widget child, Animation<double> animation) {
+                return ScaleTransition(scale: animation, child: child);
+              }),
+          ElevatedButton(
+            onPressed: () {
+              setState(() {
+                _count += 1;
+              });
+            },
+            child: Text('Add'),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+88)appBar
+import 'dart:math';
+
+import 'package:flutter/material.dart';
+
+import 'package:webview_flutter/webview_flutter.dart';
+
+import 'package:carousel_pro/carousel_pro.dart';
+
+void main(List<String> args) {
+  runApp(
+    MaterialApp(
+      home: MyApp(),
+    ),
+  );
+}
+
+class MyApp extends StatefulWidget {
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  int _count = 0;
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('AppBar'),
+        centerTitle: true,
+        actions: [
+          IconButton(
+            onPressed: () {},
+            icon: Icon(Icons.notification_add),
+          )
+        ],
+        backgroundColor: Colors.orangeAccent,
+        leading: IconButton(
+          onPressed: () {},
+          icon: IconButton(
+            onPressed: () {},
+            icon: Icon(Icons.menu),
+          ),
+        ),
+        shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.only(
+          bottomLeft: Radius.circular(25),
+          bottomRight: Radius.circular(25),
+        )),
+      ),
+      body: Center(
+        child: Text('so u wanna be hardCore'),
+      ),
+    );
+  }
+}
+89)aspectRatio
+import 'dart:math';
+
+import 'package:flutter/material.dart';
+
+import 'package:webview_flutter/webview_flutter.dart';
+
+import 'package:carousel_pro/carousel_pro.dart';
+
+void main(List<String> args) {
+  runApp(
+    MaterialApp(
+      home: MyApp(),
+    ),
+  );
+}
+
+class MyApp extends StatefulWidget {
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  int _count = 0;
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('AppBar'),
+        centerTitle: true,
+        actions: [
+          IconButton(
+            onPressed: () {},
+            icon: Icon(Icons.notification_add),
+          )
+        ],
+        backgroundColor: Colors.orangeAccent,
+        leading: IconButton(
+          onPressed: () {},
+          icon: IconButton(
+            onPressed: () {},
+            icon: Icon(Icons.menu),
+          ),
+        ),
+        shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.only(
+          bottomLeft: Radius.circular(25),
+          bottomRight: Radius.circular(25),
+        )),
+      ),
+      body: Container(
+        color: Colors.orangeAccent,
+        alignment: Alignment.center,
+        width: double.infinity,
+        height: 300,
+        child: AspectRatio(
+          aspectRatio: 16 / 9,
+          child: Container(
+            color: Colors.blueGrey,
+          ),
+        ),
+      ),
+    );
+  }
+}
+90)autoComplete
+import 'dart:math';
+
+import 'package:flutter/material.dart';
+
+import 'package:webview_flutter/webview_flutter.dart';
+
+import 'package:carousel_pro/carousel_pro.dart';
+
+void main(List<String> args) {
+  runApp(
+    MaterialApp(
+      home: MyApp(),
+    ),
+  );
+}
+
+class MyApp extends StatefulWidget {
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  static List<String> listItems = <String>[
+    'apple',
+    'banana',
+    'mango',
+    'pineapple',
+    'orange',
+    ''
+  ];
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        appBar: AppBar(
+          title: Text('AppBar'),
+          centerTitle: true,
+          actions: [
+            IconButton(
+              onPressed: () {},
+              icon: Icon(Icons.notification_add),
+            )
+          ],
+          backgroundColor: Colors.orangeAccent,
+          leading: IconButton(
+            onPressed: () {},
+            icon: IconButton(
+              onPressed: () {},
+              icon: Icon(Icons.menu),
+            ),
+          ),
+          shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.only(
+            bottomLeft: Radius.circular(25),
+            bottomRight: Radius.circular(25),
+          )),
+        ),
+        body: Autocomplete<String>(
+            optionsBuilder: (TextEditingValue textEditingValue) {
+          if (textEditingValue.text == '') {
+            return Iterable.empty();
+          }
+          return listItems.where((String item) {
+            return item.contains(textEditingValue.text.toLowerCase());
+          });
+        }, onSelected: (String item) {
+          print('The $item was selected');
+        }));
+  }
+}
+91) backDropFilter
+import 'dart:math';
+
+import 'package:flutter/material.dart';
+
+import 'package:webview_flutter/webview_flutter.dart';
+
+import 'package:carousel_pro/carousel_pro.dart';
+
+import 'dart:ui';
+
+void main(List<String> args) {
+  runApp(
+    MaterialApp(
+      home: MyApp(),
+    ),
+  );
+}
+
+class MyApp extends StatefulWidget {
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  @override
+  Widget build(BuildContext context) {
+    return Stack(
+      children: [
+        Text(
+          '0' * 10000,
+          style: TextStyle(color: Colors.green),
+        ),
+        Center(
+          child: ClipRect(
+            child: BackdropFilter(
+              filter: ImageFilter.blur(sigmaX: 4, sigmaY: 4),
+              child: Container(
+                alignment: Alignment.center,
+                width: 250,
+                height: 250,
+                child: Text('Blur'),
+              ),
+            ),
+          ),
+        )
+      ],
+    );
+  }
+}
+
+92)banner
+import 'dart:math';
+
+import 'package:flutter/material.dart';
+
+import 'package:webview_flutter/webview_flutter.dart';
+
+import 'package:carousel_pro/carousel_pro.dart';
+
+import 'dart:ui';
+
+void main(List<String> args) {
+  runApp(
+    MaterialApp(
+      home: MyApp(),
+    ),
+  );
+}
+
+class MyApp extends StatefulWidget {
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Center(
+        child: Container(
+          margin: EdgeInsets.all(10),
+          child: ClipRect(
+            child: Banner(
+              message: '25%off',
+              location: BannerLocation.topEnd,
+              color: Colors.red,
+              child: Container(
+                color: Colors.blueGrey,
+                child: Padding(
+                  padding: EdgeInsets.fromLTRB(10, 20, 10, 20),
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      Image.network(
+                        'https://tinyurl.com/5n8wvw3',
+                      ),
+                      SizedBox(
+                        height: 10,
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(
+                            'course',
+                            style: TextStyle(
+                                fontSize: 20, fontWeight: FontWeight.bold),
+                          ),
+                          ElevatedButton(
+                              style: ElevatedButton.styleFrom(
+                                  primary: Colors.orangeAccent),
+                              onPressed: () {},
+                              child: Text('getnow'))
+                        ],
+                      )
+                    ],
+                  ),
+                ),
+              ),
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+93) baseLine
+import 'dart:math';
+
+import 'package:flutter/material.dart';
+
+import 'package:webview_flutter/webview_flutter.dart';
+
+import 'package:carousel_pro/carousel_pro.dart';
+
+import 'dart:ui';
+
+void main(List<String> args) {
+  runApp(
+    MaterialApp(
+      home: MyApp(),
+    ),
+  );
+}
+
+class MyApp extends StatefulWidget {
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Center(
+        child: Container(
+          width: 200,
+          height: 200,
+          color: Colors.orange,
+          child: Baseline(
+            baseline: 50,
+            baselineType: TextBaseline.alphabetic,
+            child: FlutterLogo(
+              size: 50,
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+94) modalBottomSheet
+import 'dart:math';
+
+import 'package:flutter/material.dart';
+
+import 'package:webview_flutter/webview_flutter.dart';
+
+import 'package:carousel_pro/carousel_pro.dart';
+
+import 'dart:ui';
+
+void main(List<String> args) {
+  runApp(
+    MaterialApp(
+      home: MyApp(),
+    ),
+  );
+}
+
+class MyApp extends StatefulWidget {
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Center(
+        child: ElevatedButton(
+          child: Text('modalSheet'),
+          onPressed: () {
+            showModalBottomSheet(
+                context: context,
+                builder: (BuildContext context) {
+                  return SizedBox(
+                    height: 400,
+                    child: Center(
+                      child: ElevatedButton(
+                        child: Text('Close'),
+                        onPressed: () {
+                          Navigator.pop(context);
+                        },
+                      ),
+                    ),
+                  );
+                });
+          },
+        ),
+      ),
+    );
+  }
+}
+
+95) builder
+import 'dart:math';
+
+import 'package:flutter/material.dart';
+
+import 'package:webview_flutter/webview_flutter.dart';
+
+import 'package:carousel_pro/carousel_pro.dart';
+
+import 'dart:ui';
+
+void main(List<String> args) {
+  runApp(
+    MaterialApp(
+      home: MyApp(),
+    ),
+  );
+}
+
+class MyApp extends StatefulWidget {
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: myWidget(),
+    );
+  }
+}
+
+myWidget() => Builder(builder: (BuildContext context) {
+      return Text(
+        'Text with time',
+        style: Theme.of(context).textTheme.displayLarge,
+      );
+    });
+
+96) card
+import 'dart:math';
+
+import 'package:flutter/material.dart';
+
+import 'package:webview_flutter/webview_flutter.dart';
+
+import 'package:carousel_pro/carousel_pro.dart';
+
+import 'dart:ui';
+
+void main(List<String> args) {
+  runApp(
+    MaterialApp(
+      home: MyApp(),
+    ),
+  );
+}
+
+class MyApp extends StatefulWidget {
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Card(
+        elevation: 20,
+        color: Colors.orangeAccent,
+        child: Padding(
+          padding: EdgeInsets.all(15),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              SizedBox(
+                height: 8,
+              ),
+              Text('This is a card'),
+              TextButton(
+                onPressed: () {},
+                child: Text('press'),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+97)Center
+import 'dart:math';
+
+import 'package:flutter/material.dart';
+
+import 'package:webview_flutter/webview_flutter.dart';
+
+import 'package:carousel_pro/carousel_pro.dart';
+
+import 'dart:ui';
+
+void main(List<String> args) {
+  runApp(
+    MaterialApp(
+      home: MyApp(),
+    ),
+  );
+}
+
+class MyApp extends StatefulWidget {
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        body: Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Container(
+          color: Colors.orangeAccent,
+          child: Center(
+            heightFactor: 5,
+            child: Text('Flutter'),
+          ),
+        )
+      ],
+    ));
+  }
+}
+
+98)checkBox
+import 'dart:math';
+
+import 'package:flutter/material.dart';
+
+import 'package:webview_flutter/webview_flutter.dart';
+
+import 'package:carousel_pro/carousel_pro.dart';
+
+import 'dart:ui';
+
+void main(List<String> args) {
+  runApp(
+    MaterialApp(
+      home: MyApp(),
+    ),
+  );
+}
+
+class MyApp extends StatefulWidget {
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  bool _isChecked = false;
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Center(
+        child: Checkbox(
+          value: _isChecked,
+          activeColor: Colors.orangeAccent,
+          tristate: true,
+          onChanged: (newBool) {
+            setState(() {
+              _isChecked = newBool;
+            });
+          },
+        ),
+      ),
+    );
+  }
+}
+
+99)checkBoxListTile
+import 'dart:math';
+
+import 'package:flutter/material.dart';
+
+import 'package:webview_flutter/webview_flutter.dart';
+
+import 'package:carousel_pro/carousel_pro.dart';
+
+import 'dart:ui';
+
+void main(List<String> args) {
+  runApp(
+    MaterialApp(
+      home: MyApp(),
+    ),
+  );
+}
+
+class MyApp extends StatefulWidget {
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  bool _isChecked = false;
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Center(
+        child: CheckboxListTile(
+          title: Text('CheckBoxTile'),
+          value: _isChecked,
+          onChanged: (bool newValue) {
+            setState(() {
+              _isChecked = newValue;
+            });
+          },
+          activeColor: Colors.orangeAccent,
+          checkColor: Colors.white,
+          tileColor: Colors.black12,
+          subtitle: Text('This is a subtitle'),
+          controlAffinity: ListTileControlAffinity.leading,
+        ),
+      ),
+    );
+  }
+}
+
+100)chip
+import 'dart:math';
+
+import 'package:flutter/material.dart';
+
+import 'package:webview_flutter/webview_flutter.dart';
+
+import 'package:carousel_pro/carousel_pro.dart';
+
+import 'dart:ui';
+
+void main(List<String> args) {
+  runApp(
+    MaterialApp(
+      home: MyApp(),
+    ),
+  );
+}
+
+class MyApp extends StatefulWidget {
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  bool _isChecked = false;
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Center(
+        child: Chip(
+          label: Text('This is flutter chip'),
+          onDeleted: () {
+            debugPrint('Do something');
+          },
+        ),
+      ),
+    );
+  }
+}
+
+101) choiceChip
+import 'dart:math';
+
+import 'package:flutter/material.dart';
+
+import 'package:webview_flutter/webview_flutter.dart';
+
+import 'package:carousel_pro/carousel_pro.dart';
+
+import 'dart:ui';
+
+void main(List<String> args) {
+  runApp(
+    MaterialApp(
+      home: MyApp(),
+    ),
+  );
+}
+
+class MyApp extends StatefulWidget {
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  bool _isChecked = false;
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Center(
+          child: ChoiceChip(
+        label: Text("Choice chip"),
+        selected: _isChecked,
+        selectedColor: Colors.orangeAccent,
+        onSelected: (newState) {
+          setState(() {
+            _isChecked = newState;
+          });
+        },
+      )),
+    );
+  }
+}
+
+102) circularAvatar
+import 'dart:math';
+
+import 'package:flutter/material.dart';
+
+import 'package:webview_flutter/webview_flutter.dart';
+
+import 'package:carousel_pro/carousel_pro.dart';
+
+import 'dart:ui';
+
+void main(List<String> args) {
+  runApp(
+    MaterialApp(
+      home: MyApp(),
+    ),
+  );
+}
+
+class MyApp extends StatefulWidget {
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  bool _isChecked = false;
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Center(
+        child: CircleAvatar(
+          backgroundColor: Colors.orangeAccent,
+          radius: 60,
+          backgroundImage: AssetImage('assets/images/rdr.jfif'),
+        ),
+      ),
+    );
+  }
+}
+
+103) circularProgressIndicator
+import 'dart:math';
+
+import 'package:flutter/material.dart';
+
+import 'package:webview_flutter/webview_flutter.dart';
+
+import 'package:carousel_pro/carousel_pro.dart';
+
+import 'dart:ui';
+
+void main(List<String> args) {
+  runApp(
+    MaterialApp(
+      home: MyApp(),
+    ),
+  );
+}
+
+class MyApp extends StatefulWidget {
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  bool _isChecked = false;
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Center(
+        child: CircularProgressIndicator(
+            color: Colors.orangeAccent,
+            value: 0.50,
+            backgroundColor: Colors.blueGrey),
+      ),
+    );
+  }
+}
+
+104) cliPoval
+import 'dart:math';
+
+import 'package:flutter/material.dart';
+
+import 'package:webview_flutter/webview_flutter.dart';
+
+import 'package:carousel_pro/carousel_pro.dart';
+
+import 'dart:ui';
+
+void main(List<String> args) {
+  runApp(
+    MaterialApp(
+      home: MyApp(),
+    ),
+  );
+}
+
+class MyApp extends StatefulWidget {
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  bool _isChecked = false;
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Center(
+          child: ClipOval(
+        clipper: CustomClip(),
+        child: Container(
+          width: 80,
+          height: 80,
+          color: Colors.orangeAccent,
+        ),
+      )),
+    );
+  }
+}
+
+class CustomClip extends CustomClipper<Rect> {
+  @override
+  Rect getClip(Size size) {
+    return Rect.fromLTWH(0, 0, size.width - 15, size.height);
+  }
+
+  @override
+  bool shouldReclip(covariant CustomClipper<Rect> oldClipper) {
+    return false;
+  }
+}
+
+105) clipPath
+import 'dart:math';
+
+import 'package:flutter/material.dart';
+
+import 'package:webview_flutter/webview_flutter.dart';
+
+import 'package:carousel_pro/carousel_pro.dart';
+
+import 'dart:ui';
+
+void main(List<String> args) {
+  runApp(
+    MaterialApp(
+      home: MyApp(),
+    ),
+  );
+}
+
+class MyApp extends StatefulWidget {
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  bool _isChecked = false;
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Center(
+          child: ClipPath(
+        clipper: MyClipper(),
+        child: Container(
+          width: 80,
+          height: 80,
+          color: Colors.orangeAccent,
+        ),
+      )),
+    );
+  }
+}
+
+class MyClipper extends CustomClipper<Path> {
+  @override
+  Path getClip(Size size) {
+    return Path()
+      ..lineTo(0, size.height)
+      ..quadraticBezierTo(
+          size.width / 4, size.height - 40, size.width / 2, size.height - 20)
+      ..quadraticBezierTo(
+          3 / 4 * size.height, size.height, size.width, size.height - 30)
+      ..lineTo(size.width, 0);
+  }
+
+  @override
+  bool shouldReclip(covariant CustomClipper<Path> oldClipper) {
+    return false;
+  }
+}
+
+106)clipRect
+import 'dart:math';
+
+import 'package:flutter/material.dart';
+
+import 'package:webview_flutter/webview_flutter.dart';
+
+import 'package:carousel_pro/carousel_pro.dart';
+
+import 'dart:ui';
+
+void main(List<String> args) {
+  runApp(
+    MaterialApp(
+      home: MyApp(),
+    ),
+  );
+}
+
+class MyApp extends StatefulWidget {
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  bool _isChecked = false;
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Center(
+          child: ClipRect(
+        clipper: MyClipper(),
+        child: Container(
+          width: 3000,
+          height: 3000,
+          color: Colors.orangeAccent,
+        ),
+      )),
+    );
+  }
+}
+
+class MyClipper extends CustomClipper<Rect> {
+  @override
+  Rect getClip(Size size) {
+    return const Rect.fromLTWH(50, 0, 80, 80);
+  }
+
+  @override
+  bool shouldReclip(covariant CustomClipper<Rect> oldClipper) {
+    return false;
+  }
+}
+
+107)clipRrect
+import 'dart:math';
+
+import 'package:flutter/material.dart';
+
+import 'package:webview_flutter/webview_flutter.dart';
+
+import 'package:carousel_pro/carousel_pro.dart';
+
+import 'dart:ui';
+
+void main(List<String> args) {
+  runApp(
+    MaterialApp(
+      home: MyApp(),
+    ),
+  );
+}
+
+class MyApp extends StatefulWidget {
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  bool _isChecked = false;
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Center(
+        child: ClipRRect(
+          borderRadius: BorderRadius.circular(30),
+          child: Image.asset('assets/images/rdr.jfif'),
+        ),
+      ),
+    );
+  }
+}
+
+108)coloredBox
+import 'dart:math';
+
+import 'package:flutter/material.dart';
+
+import 'package:webview_flutter/webview_flutter.dart';
+
+import 'package:carousel_pro/carousel_pro.dart';
+
+import 'dart:ui';
+
+void main(List<String> args) {
+  runApp(
+    MaterialApp(
+      home: MyApp(),
+    ),
+  );
+}
+
+class MyApp extends StatefulWidget {
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  bool _isChecked = false;
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Center(
+          child: ColoredBox(
+        color: Colors.orangeAccent,
+        child: SizedBox(
+          width: 100,
+          height: 100,
+        ),
+      )),
+    );
+  }
+}
+
+109)constrainedBox
+import 'dart:math';
+
+import 'package:flutter/material.dart';
+
+import 'package:webview_flutter/webview_flutter.dart';
+
+import 'package:carousel_pro/carousel_pro.dart';
+
+import 'dart:ui';
+
+void main(List<String> args) {
+  runApp(
+    MaterialApp(
+      home: MyApp(),
+    ),
+  );
+}
+
+class MyApp extends StatefulWidget {
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  bool _isChecked = false;
+  @override
+  Widget build(BuildContext context) {
+    return Center(
+      child: ConstrainedBox(
+        constraints: BoxConstraints(
+          maxWidth: 900,
+          maxHeight: 350,
+        ),
+        child: Container(
+          color: Colors.orangeAccent,
+          width: double.infinity,
+        ),
+      ),
+    );
+  }
+}
+
+110)container
+import 'dart:math';
+
+import 'package:flutter/material.dart';
+
+import 'package:webview_flutter/webview_flutter.dart';
+
+import 'package:carousel_pro/carousel_pro.dart';
+
+import 'dart:ui';
+
+void main(List<String> args) {
+  runApp(
+    MaterialApp(
+      home: MyApp(),
+    ),
+  );
+}
+
+class MyApp extends StatefulWidget {
+  @override
+  State<MyApp> createState() => _MyAppState();
+}
+
+class _MyAppState extends State<MyApp> {
+  bool _isChecked = false;
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: EdgeInsets.all(8),
+      color: Colors.orangeAccent,
+      alignment: Alignment.center,
+      child: Text('Shaam'),
+      constraints: BoxConstraints.expand(height: 200),
+      transform: Matrix4.rotationZ(0.2),
+    );
+  }
+}
+
+111)
